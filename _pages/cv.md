@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: archive
 title: "Curriculum Vitae"
 permalink: /cv/
@@ -80,3 +80,4 @@ January 2017 - June 2019
 * Manage team of 4 officers to organize club budget, advertising, equipment transportation and general logistics
 * Host weekly meetings that allow students to connect socially and play FIFA, averaging about 15-20 students each week  
 * Organized quarterly tournaments that entertain approximately 20-25 participants, with our largest tournament entertaining 47 participants
+ -->
