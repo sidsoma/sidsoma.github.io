@@ -1,4 +1,4 @@
----
+<!-- ---
 title: "Undergraduate Teaching Assistant"
 collection: teaching
 type: "Physics 117: Electronics for Physics Measurements"
@@ -18,3 +18,4 @@ computer data acquisition and signal processing.
 ## Role 
 * Assisted teaching students' theoretical concepts and practical laboratory skills for analog circuits and digital electronics
 * Organized and maintained electronics laboratory by testing, fixing and purchasing parts and equipment
+ -->
