@@ -1,4 +1,4 @@
----
+<!-- ---
 title: "Electron Ghost Imaging"
 collection: publications
 permalink: /publication/2018-09-11-electron-ghost-imaging
@@ -52,3 +52,4 @@ precludes full frame direct imaging.
 	doi = {10.1103/PhysRevLett.121.114801},<br>
 	url = {https://link.aps.org/doi/10.1103/PhysRevLett.121.114801}<br>
 }
+ -->
