@@ -80,14 +80,14 @@ analytics:
 
 # Site Author
 author:
-  name             : "Krish Kabra"
+  name             : "Siddharth Somasundaram"
   avatar           : "profile.jpg"
-  bio              : "M.S. in Electrical & Computer Engineering, UCLA, Expected 2021; B.S in Physics, UCLA, 2019; Ethnically Indian, born & raised in Kuwait"
+  bio              : "Visiting Researcher at MIT Media Lab"
   location         : "Los Angeles, California"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=t0t59YwAAAAJ&hl=en"
-  email            : "krish@kabra.com"
+  googlescholar    : "https://scholar.google.com/citations?user=WnLfhFQAAAAJ&hl=en&oi=ao"
+  email            : "somasundaram.siddharth@gmail.com"
   researchgate     :  
   uri              :
   bitbucket        :
@@ -102,8 +102,8 @@ author:
   instagram        : 
   impactstory      : 
   lastfm           :
-  linkedin         : "krish-kabra"
-  orcid            : "https://orcid.org/0000-0003-1518-268X"
+  linkedin         : "sidsoma"
+  orcid            : # "https://orcid.org/0000-0003-1518-268X"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
