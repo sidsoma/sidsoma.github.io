@@ -1,4 +1,4 @@
----
+<!-- ---
 title: "Mapping photocathode quantum efficiency with ghost imaging"
 collection: publications
 permalink: /publication/2020-02-12-mapping-photocathode-qe
@@ -56,3 +56,4 @@ parasitically from the LCLS photoinjector, showing the feasibility of this metho
   url = {https://link.aps.org/doi/10.1103/PhysRevAccelBeams.23.022803}<br>
 }
 
+ -->
