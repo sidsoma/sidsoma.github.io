@@ -8,9 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-I will be joining the Camera Culture group, led by Prof. Ramesh Raskar, at MIT Media Lab this summer as a visiting researcher. My work will focus on time-of-flight imaging. My primary research interests lie in computational imaging, computational optics, inverse problems, and graphics.
+I will be joining MIT Media Lab this summer as a visiting researcher, working with the Camera Culture group let by Prof. Ramesh Raskar. My work will focus on time-of-flight imaging. My primary research interests lie in computational imaging, computational optics, inverse problems, and graphics.
 
-I graduated from UCLA with a BS in Electrical Engineering in June 2021. During this time, I worked on projects in imaging, quantum optics/photonics, and semiconductor device design and characterization. I worked with Prof. Achuta Kadambi on computational camera design for non line of sight (NLOS) imaging and remote heart rate estimation. I also worked with Prof. Diana Huffaker on semiconductor nanowire photodetectors at SWIR/MWIR. I also spent two summers interning at The Aerospace Corporation and HRL Laboratories working on photoluminescence spectroscopy and simulation of optical components for quantum communication, respectively.
+I graduated from UCLA with a BS in Electrical Engineering in June 2021. During this time, I worked with Prof. Achuta Kadambi and Prof. Diana Huffaker on projects in computational imaging, quantum optics/photonics, and semiconductor device design and characterization. I also spent two summers interning at The Aerospace Corporation and HRL Laboratories.
 
 
 ## Updates
