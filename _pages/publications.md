@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: archive
 title: "Publications"
 permalink: /publications/
@@ -15,3 +15,4 @@ author_profile: true
   {% include archive-thumbnail.html %}
 {% endfor %}
 
+ -->
