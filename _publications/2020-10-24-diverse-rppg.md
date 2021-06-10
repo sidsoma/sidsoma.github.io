@@ -1,4 +1,4 @@
----
+<!-- ---
 title: "Diverse R-PPG: Camera-Based Heart Rate Estimation for Diverse Subject Skin-Tones and Scenes"
 collection: publications
 permalink: /publication/2020-10-24-diverse-rppg
@@ -44,3 +44,4 @@ skin tones, setting the stage for making medically inclusive non-contact HR sens
     archivePrefix={arXiv},<br>
     primaryClass={eess.IV}<br>
 }
+ -->
