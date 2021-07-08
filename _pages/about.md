@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I will be joining the Camera Culture group, led by Prof. Ramesh Raskar, at MIT Media Lab this summer as a visiting researcher. My primary research interests lie in computational imaging, computational optics, inverse problems, and graphics.
+I am currently a visiting researcher at the Camera Culture group, led by Prof. Ramesh Raskar, at MIT Media Lab. My primary research interests lie in computational imaging, computational optics, inverse problems, and graphics.
 
 I graduated from UCLA with a B.S. in Electrical Engineering in June 2021. During this time, I worked with Prof. Achuta Kadambi and Prof. Diana Huffaker on projects in computational imaging, optics, photonics, and semiconductor device design and characterization. I also spent two summers interning at The Aerospace Corporation and HRL Laboratories.
 
