@@ -94,7 +94,7 @@
     </tr>
     
 		
-    <tr onmouseout="twonlos_stop()" onmouseover="twonlos_start()">
+    <tr onmouseout="specular_stop()" onmouseover="specular_start()">
       <td style="padding:20px;width:25%;vertical-align:middle">
 	      <div class="one">
 		<div class="specular" id='specular_image'><img src='images/specular_setup.png' width="145" height="160" style="border-style: none"></div>
@@ -128,12 +128,25 @@
       </td>
     </tr>
 
-    
-
-    <tr onmouseout="alignerf_stop()" onmouseover="alignerf_start()" bgcolor="#ffffd0">
+   
+	
+    <tr onmouseout="perspective_stop()" onmouseover="perspective_start()" bgcolor="#ffffd0">
       <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/e2e_perspective.png" alt="e2e_perspective" width="160" height="70" style="border-style: none">
-            </td>
+              <div class="one">
+		<div class="perspective" id='perspective_image'><img src='images/e2e_perspective.png' width="45" height="160" style="border-style: none"></div>
+		<img src='images/axes_perspective.png' width="113" height="160" style="border-style: none">
+	      </div>
+	      <script type="text/javascript">
+		function perspective_start() {
+		  document.getElementById('perspective_image').style.opacity = "1";
+		}
+
+		function perspective_stop() {
+		  document.getElementById('perspective_image').style.opacity = "0";
+		}
+		twonlos_stop()
+	      </script>
+       </td>
       <td style="padding:20px;width:75%;vertical-align:middle">
         <a href="https://sidsoma.github.io/">
           <papertitle>Physics vs. Learned Priors: Rethinking Camera Design for Task-Specific Camera and Algorithm Design
