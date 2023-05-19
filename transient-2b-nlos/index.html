@@ -1,156 +1,352 @@
+
 <!DOCTYPE html>
-<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>PANDORA</title>
+    <title>Transient Two-Bounce NLOS</title>
 
-    <!-- mirror: F0%9F%AA%9E&lt -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/codemirror.min.css">
-    <link rel="stylesheet" href="css/app.css">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/codemirror.min.js"></script>
-    <script src="js/clipboard.min.js"></script>
-    <script src="js/video_comparison.js"></script>
-    <script src="js/app.js"></script>
+    <!-- <base href="/"> -->
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <link rel="icon" type="image/png" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="app.css">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="app.js"></script>
 </head>
 
 <body>
-    <div class="container" id="header" style="text-align: center; margin: auto;">
-        <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
-            <h2 class="col-md-12 text-center" id="title">
-                <b>PANDORA</b>: Polarization-Aided <br> Neural Decomposition Of Radiance<br>
-                <small>
-                    ECCV 2022
-                </small>
-            </h2>
-        </div>
-        <div class="row" id="author-row" style="margin:0 auto;">
-            <div class="col-md-12 text-center" style="display: table; margin:0 auto">
-                <table class="author-table" id="author-table">
-                    <tr>
-                        <td>
-                            <a style="text-decoration:none" href="https://akshatdave.github.io">
-                              Akshat Dave
-                        </td>
-                        <td>
-                            <a style="text-decoration:none" href="https://yongyizhao.com/">
-                              Yongyi Zhao
-                        </td>
-                        <td>
-                            <a style="text-decoration:none" href="https://computationalimaging.rice.edu/team/ashok-veeraraghavan/">
-                             Ashok Veeraraghavan
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-md-12 text-center" style="display: table; margin:0 auto">
-                <table class="author-table" id="uni-table">
-                    <tr>
-                        <td>
-                            <a style="text-decoration:none" href="https://computationalimaging.rice.edu"> Computational Imaging Lab, Rice University </a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-    <!-- <script>
-        document.getElementById('author-row').style.maxWidth = document.getElementById("title-row").clientWidth + 'px';
-    </script> -->
     <div class="container" id="main">
         <div class="row">
-                <div class="col-md-4 col-md-offset-3 text-center">
+            <h1 class="col-md-12 text-center">
+                Role of Transients in Two-Bounce Non-Line-of-Sight Imaging<br>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://www.media.mit.edu/people/ktiwary/overview/">
+                          Siddharth Somasundaram
+                        </a>
+                        </br>MIT
+                    </li>
+                    <li>
+                        <a href="https://akshatdave.github.io/">
+                          Akshat Dave 
+                        </a>
+                        </br>Rice
+                    </li>
+                    <li>
+                        <a href="https://www.media.mit.edu/people/co24401/overview/">
+                          Connor Henley
+                        </a>
+                        </br>MIT
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://computationalimaging.rice.edu/team/ashok-veeraraghavan/">
+                          Ashok Veeraraghavan
+                        </a>
+                        </br>Rice
+                    </li>
+                    <li>
+                        <a href="https://web.media.mit.edu/~raskar/">
+                          Ramesh Raskar
+                        </a>
+                        </br>MIT
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-                            <a href="https://arxiv.org/abs/2203.13458">
-                            <img src="./img/pdf.png" height="50px">
-                                <h4><strong>Paper</strong></h4>
+                            <a href="">
+                            <image src="paper.png" height="120px"><br>
+                                <h4>
+                                    <a href="https://arxiv.org/abs/2212.04531">
+                                        <b>Paper</b>
+                                      </a>
+                                </h4>
                             </a>
                         </li>
-                        <li> 
-                            <a href="https://youtu.be/otpob9keMhY">
-                                <img src="./img/video.png" height="50px"> 
-                                 <h4><strong>Video</strong></h4>
+                        <li>
+                            <a href="">
+                            <image src="supplement_1.png" height="120px"><br>
+                                <h4>
+                                    <a href="https://drive.google.com/file/d/1VfwcosLeUoP1bXYLSIDitJjWWinXNv01/view?usp=sharing">
+                                        <b>Supplementary Material</b>
+                                      </a>
+                                </h4>
                             </a>
                         </li>
                         <li>
-                                <a href="https://drive.google.com/file/d/1FvOi_2wfSUnASHulQdBhHQcQCxOuJ8zz/view" target="_blank">
-                                <img src="./img/data.png" height="50px"> 
-                                <h4><strong>Data</strong></h4> 
-                                </a>
-                        </li> 
-                        <li>
-                                <a href="https://github.com/akshatdave/pandora">
-                                <img src="./img/code_icon.png" height="50px"> 
-                                <!-- <font size="-1">(Coming Soon)</font> <br>  -->
-                                <h4><strong>Recon. Code</strong></h4> 
-                                </a>
+                            <a href="">
+                            <image src="youtube_icon_dark.png" height="120px"><br>
+                                <h4><strong>Technical Video (coming soon)</strong></h4>
+                            </a>
                         </li>
                         <li>
-                                <a href="https://github.com/akshatdave/mitsuba2_render_multiview">
-                                <img src="./img/camera.png" height="50px"> 
-                                <h4><strong>Dataset Code</strong></h4> 
-                                </a>
-                        </li> 
+                            <a href="https://github.com/ktiwary2/orca">
+                            <image src="github_pad.png" height="120px"><br>
+                                <h4><strong>Code (ktiwary/orca)</strong></h4>
+                            </a>
+                        </li>
                     </ul>
                 </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <video id="teaser" width="100%" playsinline autoplay loop muted >
-                    <source src="video/teaser_animation.mp4" type="video/mp4" />
-                </video>
-			</div>
-        </div>
 
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Abstract
                 </h3>
+                <image src="teaser.png" class="img-responsive" alt="overview"><br>
                 <p class="text-justify">
-                Reconstructing an object's geometry and appearance from multiple images, also known as inverse rendering, is a fundamental problem in computer graphics and vision.  Inverse rendering is inherently ill-posed because the captured image is an intricate function of unknown lighting conditions, material properties and scene geometry. Recent progress in representing scene properties as coordinate-based neural networks have facilitated neural inverse rendering resulting in impressive geometry reconstruction and novel-view synthesis.  Our key insight is that polarization is a useful cue for neural inverse rendering as polarization strongly depends on surface normals and is distinct for diffuse and specular reflectance. With the advent of commodity, on-chip, polarization sensors, capturing polarization has become practical. Thus, we propose PANDORA, a polarimetric inverse rendering approach based on implicit neural representations. From multi-view polarization images of an object, PANDORA jointly extracts the object's 3D geometry, separates the outgoing radiance into diffuse and specular and estimates the illumination incident on the object. We show that PANDORA outperforms state-of-the-art radiance decomposition techniques. PANDORA outputs clean surface reconstructions free from texture artefacts, models strong specularities accurately and estimates illumination under practical unstructured scenarios. 
+Reflections on glossy objects contain valuable and hidden information about the surrounding environment. By converting these objects into cameras, we can unlock exciting applications, including imaging beyond the camera's field-of-view and from seemingly impossible vantage points, e.g. from reflections on the human eye. However, this task is challenging because reflections depend jointly on object geometry, material properties, the 3D environment, and the observer viewing direction. Our approach converts glossy objects with unknown geometry into radiance-field cameras to image the world from the object's perspective. Our key insight is to convert the object surface into a virtual sensor that captures cast reflections as a 2D projection of the 5D environment radiance field visible to the object. We show that recovering the environment radiance fields enables depth and radiance estimation from the object to its surroundings in addition to beyond field-of-view novel-view synthesis, i.e. rendering of novel views that are only directly-visible to the glossy object present in the scene, but not the observer. Moreover, using the radiance field we can image around occluders caused by close-by objects in the scene. Our method is trained end-to-end on multi-view images of the object and jointly estimates object geometry, diffuse radiance, and the 5D environment radiance field.
                 </p>
             </div>
         </div>
+        
         <div class="row">
-                <div class="col-md-10 col-md-offset-1 text-center">
-                    <ul class="nav nav-pills nav-justified">
-                        <li>
-                            <a href="sim_results.html">
-                            <h3><strong>Rendered Dataset Results</strong></h3>
-                            (Click here for interactive renderings)<br>
-                            <img src="./img/sim_results_thumbnail.png" height="260px">
-                            </a>
-                        </li>
-                        <li> 
-                            <a href="real_results.html">
-                            <h3><strong>Real Dataset Results</strong></h3>
-                            (Click here for interactive renderings)<br>
-                            <img src="./img/real_results_thumbnail.PNG" height="260px">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Modeling Unknown Object Surface as Virtual Sensors with Virtual Pixels 
+                </h3>
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="">
+                        <image src="rotating_sphere_.gif" height="180px"><br>
+                            <h4><strong>Multi-view Images of a sphere-in-living-room</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                        <image src="2d_env_rad.gif" height="180px"><br>
+                            <h4><strong>2D Environment Map from Reflections on Object</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                        <image src="living_room_virtual_rgb.gif" height="180px"><br>
+                            <h4><strong>Beyond FoV NVS using 5D Env. Radiance Fields</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+                <p class="text-justify">
+                    From Multi-View images of an object with unknown geometry and diffuse texture, we convert the <b> object into a radiance-field camera</b> by modelling reflections as a 2D projection of a 5D environment radiance field onto the object surface. 
+                    The unknown object surface is modeled as a <b>virtual sensor</b> with <b>virtual pixels</b> that, unlike a tradition pixel, <b>have incoming radiance that is dependent on both viewpoint and local geometry </b>. 
+                    <b>Using the virtual pixel, we capture the Environment Radiance Field. </b>
+                    The radiance field is then queried on novel view points closer to the object to enable <strong>Beyond Field-Of-View Novel View Synthesis</strong>. 
+                    Our framework can disentangle complex diffuse and specular radiance to uncover the hidden environment- notice how the <b>fireplace is occluded</b> in the multi-view images yet our framework can recover and interpolate to render the complete fireplace. 
+                </p>
+            </div>
         </div>
 
-    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:center;font-size:small;">
-              The source code and design of this webpage is adapted from <a href="https://dorverbin.github.io/refnerf/"> Ref-NeRF project page</a>. We would like to thank the authors for the inspiration.
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <!-- <h3> -->
+                <!-- </h3> -->
+                <!-- <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="">
+                        <image src="living_room_virtual_rgb.gif" height="240px"><br>
+                            <h4><strong>Occlusion Aware - Reveals hidden parts of the scene not visible from 2D Environment maps</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                        <image src="exp51_lv_forward_sphere_2gpus_vcam_rgb_254x254_3_train_views.gif" height="240px"><br>
+                            <h4><strong>Radiance from Env. Radiance Field rendered at novel views</strong></h4>
+                        </a>
+                    </li> -->
+                    <!-- <li>
+                        <a href="">
+                        <image src="exp51_lv_forward_sphere_2gpus_vcam_depth_254x254_3_train_views.gif" height="180px"><br>
+                            <h4><strong>Depth from Env. Radiance Field rendered at novel views</strong></h4>
+                        </a>
+                    </li>  -->
+                <!-- </ul> -->
+                <!-- <p class="text-justify"> -->
+                    <!-- From Multi-View images of an object with unknown geometry and diffuse texture, we convert the <b> object into a radiance-field camera</b> by modelling reflections as a 2D projection of a 5D environment radiance field onto the object surface.  -->
+                    <!-- The radiance field is queried on points closer to the object to enable <strong> Beyond Field-Of-View Novel View Synthesis</strong>.  -->
+                    <!-- Our framework can disentangle complex diffuse and specular radiance to uncover the hidden environment- notice how the <b>fireplace is occluded</b> in the multi-view images yet our framework can recover and interpolates between reflections to renders novel views and depth.  -->
+                <!-- </p> -->
+            <!-- </div> -->
+        <!-- </div> --> -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Why 5D Environment Radiance Fields? 
+                </h3>
+                <ul class="nav nav-pills nav-justified">
+                   <p style="text-align:center;"> <image src="paralax_1.png" height="300px"><br>
+                    <li>
+                        <a href="">
+                        <image src="pokemon_translation_along_circle.gif" height="240px"><br>
+                            <h4><strong>Occlusion Aware - Reveals hidden parts of the scene not visible from 2D Environment maps</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                        <image src="pokemon_translation_along_circle_depth.gif" height="240px"><br>
+                            <h4><strong>Environment Depth to closeby objects from Reflections Casted on Unknown Objects</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+                <p class="text-justify">
+                    Modeling reflections on object surfaces as a 5D env. radiance field enables beyond field-of-view novel-view synthesis, including rendering of the environment from translated virtual camera views. Depth and environment radiance of translated and parallax views can further enable imaging behind occluders, for example revealing the tails behind the primary Pokemon occluders.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Environment Radiance Field Enables Depth Estimation
+                </h3>
+                <ul class="nav nav-pills nav-justified">
+                    <!-- <li>
+                        <a href="">
+                        <image src="exp51_lv_forward_sphere_2gpus_vcam_rgb_254x254_3_train_views.gif" height="180px"><br>
+                            <h4><strong>Radiance from Env. Radiance Field rendered at novel views</strong></h4>
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="">
+                        <image src="lv_sphere_depth.gif" height="180px"><br>
+                            <h4><strong>Living Room Depth from Object's Surface when modeled as a Virtual Sensor</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                        <image src="exp52_pokemon_2gpus_twobdepth_254x254_3_train_views.gif" height="180px"><br>
+                            <h4><strong>Pokemon Depth from Object's Surface when modeled as a Virtual Sensor</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                        <image src="exp51_lv_forward_sphere_2gpus_vcam_depth_254x254_3_train_views.gif" height="180px"><br>
+                            <h4><strong>Rendering Depth at novel view points by querying the Env. Radiance Field</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+                <p class="text-justify">
+                    From Multi-View images of an object with unknown geometry and diffuse texture, we convert the <b> object into a radiance-field camera</b> by modelling reflections as a 2D projection of a 5D environment radiance field onto the object surface. 
+                    The radiance field is queried on points closer to the object to enable <strong> Beyond Field-Of-View Novel View Synthesis</strong>. 
+                    Our framework can disentangle complex diffuse and specular radiance to uncover the hidden environment- notice how the <b>fireplace is occluded</b> in the multi-view images yet our framework can recover and interpolates between reflections to renders novel views and depth. 
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Virtual Pixels Cast Virutal Cones 
+                </h3>
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="">
+                        <image src="virtual-sesnor.png" height="280px"><br>
+                            <h4><strong>Our Virtual Cone Formulation</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                        <image src="ivc_vs_cvc.png" height="280px"><br>
+                            <h4><strong>Naive Virtual Cones</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+                <p class="text-justify">
+                    We image the world through the object by modeling each pixel’s specular radiance as a projection of the 5D radiance field of the environment onto the object’s surface. 
+                    We capture the radiance field by treating the surface area on the object that the pixel views, dSt, as a virtual pixel with its center-of-projection at vo. 
+                    We cast virtual cones through the virtual sensor to capture the 5D radiance field of the environment. 
+                    Our formulation is more physically informed and samples the full incoming radiance by accounting for the real-pixel and object intersectional area (Right). 
+
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Orca Applications
+                </h3>
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="">
+                        <image src="application_1.gif" height="280px"><br>
+                            <h4><strong>Virtual Object Insertion</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                        <image src="application_2.gif" height="280px"><br>
+                            <h4><strong>Material Editing</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+                <p class="text-justify">
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{glossyobjects2022,
+  title={ORCa: Glossy Objects as Radiance-Field Cameras},
+  author={Tiwary, Kushagra and Dave, Akshat and Behari, Nikhil and Klinghoffer, Tzofi and Veeraraghavan, Ashok and Raskar, Ramesh},
+  booktitle={ArXiv},
+  year={2022}}
+</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                </p>
+            </div>
+        </div>
     </div>
-
-
-</body></html>
+</body>
+</html>
