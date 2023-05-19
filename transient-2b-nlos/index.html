@@ -1,189 +1,156 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Siddharth Somasundaram</title>
-  
-  <meta name="author" content="Siddharth Somasundaram">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+    <title>PANDORA</title>
+
+    <!-- mirror: F0%9F%AA%9E&lt -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/codemirror.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/video_comparison.js"></script>
+    <script src="js/app.js"></script>
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Siddharth Somasundaram</name>
+    <div class="container" id="header" style="text-align: center; margin: auto;">
+        <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
+            <h2 class="col-md-12 text-center" id="title">
+                <b>PANDORA</b>: Polarization-Aided <br> Neural Decomposition Of Radiance<br>
+                <small>
+                    ECCV 2022
+                </small>
+            </h2>
+        </div>
+        <div class="row" id="author-row" style="margin:0 auto;">
+            <div class="col-md-12 text-center" style="display: table; margin:0 auto">
+                <table class="author-table" id="author-table">
+                    <tr>
+                        <td>
+                            <a style="text-decoration:none" href="https://akshatdave.github.io">
+                              Akshat Dave
+                        </td>
+                        <td>
+                            <a style="text-decoration:none" href="https://yongyizhao.com/">
+                              Yongyi Zhao
+                        </td>
+                        <td>
+                            <a style="text-decoration:none" href="https://computationalimaging.rice.edu/team/ashok-veeraraghavan/">
+                             Ashok Veeraraghavan
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12 text-center" style="display: table; margin:0 auto">
+                <table class="author-table" id="uni-table">
+                    <tr>
+                        <td>
+                            <a style="text-decoration:none" href="https://computationalimaging.rice.edu"> Computational Imaging Lab, Rice University </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- <script>
+        document.getElementById('author-row').style.maxWidth = document.getElementById("title-row").clientWidth + 'px';
+    </script> -->
+    <div class="container" id="main">
+        <div class="row">
+                <div class="col-md-4 col-md-offset-3 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2203.13458">
+                            <img src="./img/pdf.png" height="50px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="https://youtu.be/otpob9keMhY">
+                                <img src="./img/video.png" height="50px"> 
+                                 <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                                <a href="https://drive.google.com/file/d/1FvOi_2wfSUnASHulQdBhHQcQCxOuJ8zz/view" target="_blank">
+                                <img src="./img/data.png" height="50px"> 
+                                <h4><strong>Data</strong></h4> 
+                                </a>
+                        </li> 
+                        <li>
+                                <a href="https://github.com/akshatdave/pandora">
+                                <img src="./img/code_icon.png" height="50px"> 
+                                <!-- <font size="-1">(Coming Soon)</font> <br>  -->
+                                <h4><strong>Recon. Code</strong></h4> 
+                                </a>
+                        </li>
+                        <li>
+                                <a href="https://github.com/akshatdave/mitsuba2_render_multiview">
+                                <img src="./img/camera.png" height="50px"> 
+                                <h4><strong>Dataset Code</strong></h4> 
+                                </a>
+                        </li> 
+                    </ul>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <video id="teaser" width="100%" playsinline autoplay loop muted >
+                    <source src="video/teaser_animation.mp4" type="video/mp4" />
+                </video>
+			</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                Reconstructing an object's geometry and appearance from multiple images, also known as inverse rendering, is a fundamental problem in computer graphics and vision.  Inverse rendering is inherently ill-posed because the captured image is an intricate function of unknown lighting conditions, material properties and scene geometry. Recent progress in representing scene properties as coordinate-based neural networks have facilitated neural inverse rendering resulting in impressive geometry reconstruction and novel-view synthesis.  Our key insight is that polarization is a useful cue for neural inverse rendering as polarization strongly depends on surface normals and is distinct for diffuse and specular reflectance. With the advent of commodity, on-chip, polarization sensors, capturing polarization has become practical. Thus, we propose PANDORA, a polarimetric inverse rendering approach based on implicit neural representations. From multi-view polarization images of an object, PANDORA jointly extracts the object's 3D geometry, separates the outgoing radiance into diffuse and specular and estimates the illumination incident on the object. We show that PANDORA outperforms state-of-the-art radiance decomposition techniques. PANDORA outputs clean surface reconstructions free from texture artefacts, models strong specularities accurately and estimates illumination under practical unstructured scenarios. 
+                </p>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="sim_results.html">
+                            <h3><strong>Rendered Dataset Results</strong></h3>
+                            (Click here for interactive renderings)<br>
+                            <img src="./img/sim_results_thumbnail.png" height="260px">
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="real_results.html">
+                            <h3><strong>Real Dataset Results</strong></h3>
+                            (Click here for interactive renderings)<br>
+                            <img src="./img/real_results_thumbnail.PNG" height="260px">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:center;font-size:small;">
+              The source code and design of this webpage is adapted from <a href="https://dorverbin.github.io/refnerf/"> Ref-NeRF project page</a>. We would like to thank the authors for the inspiration.
               </p>
-              <p>I am a graduate student at <a href="https://www.media.mit.edu/people/sidsoma/overview/">MIT Media Lab</a> in Cambridge, MA, advised by Prof. Ramesh Raskar in the Camera Culture group. My research interests are in computational imaging, computer vision, time-of-flight imaging, and inverse problems. 
-              </p>
-              <p>
-                I previously graduated from UCLA Electrical Engineering in 2021, where I worked with Prof. Diana Huffaker on semiconductor nanowire photodetectors and with Prof. Achuta Kadambi on computational camera design.
-              </p>
-              <p style="text-align:center">
-                <a href="mailto:sidsoma@mit.edu">Email</a> &nbsp/&nbsp
-                <a href="data/siddharth_somasundaram_cv.pdf">CV</a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?hl=en&user=WnLfhFQAAAAJ">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://twitter.com/sidartsoma">Twitter</a> &nbsp/&nbsp
-                <a href="https://github.com/sidsoma/">Github</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/sid_headshot.JPG"><img style="width:100%;max-width:100%" alt="profile photo" src="images/sidsoma_circle.png" class="hoverZoomLink"></a>
             </td>
           </tr>
         </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
-               I'm interested in understanding how the space-time propogation of light allows us to infer properties of the world around us. First author papers are <span class="highlight">highlighted</span>.
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-				
-    
-    <tr onmouseout="twonlos_stop()" onmouseover="twonlos_start()"  bgcolor="#ffffd0">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-	      <div class="one">
-		<div class="two" id='twonlos_image'><img src='images/twonlos_after.PNG' width="160" height="160" style="border-style: none"></div>
-		<img src='images/twonlos_before.PNG' width="160" height="160" style="border-style: none">
-	      </div>
-	      <script type="text/javascript">
-		function twonlos_start() {
-		  document.getElementById('twonlos_image').style.opacity = "1";
-		}
+    </div>
 
-		function twonlos_stop() {
-		  document.getElementById('twonlos_image').style.opacity = "0";
-		}
-		twonlos_stop()
-	      </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://sidsoma.github.io/">
-          <papertitle>Role of Transients in Two-Bounce Non-Line-of-Sight Imaging</papertitle>
-        </a>
-        <br>
-        <strong>Siddharth Somasundaram</strong>,
-        <a href="https://akshatdave.github.io/">Akshat Dave</a>,
-        <a href="https://www.media.mit.edu/people/co24401/overview/">Connor Henley</a>,
-        <a href="https://computationalimaging.rice.edu/team/ashok-veeraraghavan/">Ashok Veeraraghavan</a>, </b>
-        <a href="https://web.media.mit.edu/~raskar/">Ramesh Raskar</a>
-        <br>
-        <em>CVPR 2023</em>
-        <br>
-        <a href="https://sidsoma.github.io/">[project page]</a>
-        <a href="https://sidsoma.github.io/">[video]</a>
-	<a href="https://sidsoma.github.io/">[code]</a>
-        <a href="https://arxiv.org/abs/2304.01308">[paper]</a>
-        <p></p>
-        <p>
-        Show how transients can reduce the number of measurements needed for two-bounce non-line-of-sight imaging.
-        </p>
-      </td>
-    </tr>
-	  
-<!-- Specular Surface Project -->
-    <tr onmouseout="specular_stop()" onmouseover="specular_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-	      <div class="one">
-		<div class="two" id='specular_image'><img src='images/specular_results.gif' width="160" height="160" style="border-style: none"></div>
-		<img src='images/specular_geometry.png' width="160" height="160" style="border-style: none">
-	      </div>
-	      <script type="text/javascript">
-		function specular_start() {
-		  document.getElementById('specular_image').style.opacity = "1";
-		}
 
-		function specular_stop() {
-		  document.getElementById('specular_image').style.opacity = "0";
-		}
-		specular_stop()
-	      </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-				<a href="https://www.media.mit.edu/projects/detecting-and-mapping-transparent-or-mirror-like-surfaces-with-lidar/overview/">
-          <papertitle>Detection and Mapping of Specular Surfaces using Multibounce LiDAR Returns</papertitle>
-        </a>
-        <br>
-        
-<a href="https://www.media.mit.edu/people/co24401/overview/">Connor Henley</a>, <strong>Siddharth Somasundaram</strong>, <a href="https://scholar.google.es/citations?hl=en&user=cnYhDZUAAAAJ&view_op=list_works&sortby=pubdate">Joseph Hollmann</a>, <a href="https://web.media.mit.edu/~raskar/">Ramesh Raskar</a>
-        <br>
-        <em>Optics Express 2023</em>
-        <br>
-				<a href="https://www.media.mit.edu/projects/detecting-and-mapping-transparent-or-mirror-like-surfaces-with-lidar/overview/">[project page]</a>  
-				<a href="https://github.com/co24401/Imaging-Glass-and-Mirrors">[code]</a>
-	      			<a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-31-4-6370&id=525900">[paper]</a>
-        <p></p>
-        <p>Exploiting the geometry of two- and three-bounce lidar signals to image mirror-like surfaces.</p>
-      </td>
-    </tr>
-
-   
-<!-- Physics vs. Learned Priors Perspective	 -->
-    <tr onmouseout="perspective_stop()" onmouseover="perspective_start()" bgcolor="#ffffd0">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-		<div class="two" id='perspective_image'><img src='images/axes_perspective.png' width="160" height="160" style="border-style: none"></div>
-		<img src='images/e2e_perspective.png' width="160" height="160" style="border-style: none">
-	      </div>
-	      <script type="text/javascript">
-		function perspective_start() {
-		  document.getElementById('perspective_image').style.opacity = "0";
-		}
-
-		function perspective_stop() {
-		  document.getElementById('perspective_image').style.opacity = "1";
-		}
-		perspective_stop()
-	      </script>
-       </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://sidsoma.github.io/">
-          <papertitle>Physics vs. Learned Priors: Rethinking Camera Design for Task-Specific Camera and Algorithm Design
-</papertitle>
-        </a>
-        <br>
-        <strong>Siddharth Somasundaram*</strong>,
-        <a href="https://tzofi.github.io/">Tzofi Klinghoffer*</a>, 
-        <a href="https://www.kushagratiwary.com/">Kushagra Tiwary*</a>,
-	<a href="https://web.media.mit.edu/~raskar/">Ramesh Raskar</a>
-	<br>
-        <em>ICCP 2022</em>
-        <br>
-        <a href="https://www.youtube.com/watch?v=FDQFiAUrPHo&t=4751s&ab_channel=ICCP">[video]</a> 
-	<a href="https://ieeexplore.ieee.org/abstract/document/9887681">[paper]</a>
-        <p></p>
-        <p>
-        Review perspective on the convergence of computational imaging, end-to-end optimization, and physics-based machine learning for imaging system design.
-        </p>
-      </td>
-    </tr>
-        </tbody>
-</table>
-
-				
-	      
-  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr>
-      <td style="padding:0px">
-        <br>
-        <p style="text-align:right;font-size:small;">
-          The source code for this website was adapted from the website of <a href="https://jonbarron.info/">Dr. Jon Barron</a>. 
-        </p>
-      </td>
-    </tr></tbody>
-  </table>
-
-</body>
-
-</html>
+</body></html>
