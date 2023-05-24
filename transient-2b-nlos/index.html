@@ -144,26 +144,13 @@
                 <h3>
                     [Prior Work] Two-Bounce NLOS Imaging Using Individual Shadows
                 </h3>
-                <ul class="nav nav-pills nav-justified">
-                    <li>
-                        <a href="">
-                        <image src="rotating_sphere_.gif" height="180px"><br>
-                            <h4><strong>Multi-view Images of a sphere-in-living-room</strong></h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                        <image src="2d_env_rad.gif" height="180px"><br>
-                            <h4><strong>2D Environment Map from Reflections on Object</strong></h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                        <image src="living_room_virtual_rgb.gif" height="180px"><br>
-                            <h4><strong>Beyond FoV NVS using 5D Env. Radiance Fields</strong></h4>
-                        </a>
-                    </li>
-                </ul>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <video id="teaser" width="100%" playsinline autoplay loop muted >
+                            <source src="images/shape_from_shadows.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
                 <p class="text-justify">
                     In a two-bounce NLOS configuration, a hidden object lies behind an occluder but is surrounded by two relay surfaces. By scanning a laser point across one relay surface and measuring cast shadows on the other wall, it is possible to reconstruct the 3D shape of the occluded object. 
                 </p>
