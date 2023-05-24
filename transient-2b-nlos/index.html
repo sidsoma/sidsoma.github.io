@@ -146,7 +146,7 @@
                 </h3>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        <video id="teaser" width="100%" playsinline autoplay loop muted >
+                        <video id="shape_from_shadows" width="100%" playsinline autoplay loop muted >
                             <source src="images/shape_from_shadows2.mp4" type="video/mp4" />
                         </video>
                     </div>
@@ -165,18 +165,20 @@
                 </h3>
                 <ul class="nav nav-pills nav-justified">
                    <p style="text-align:center;"> <image src="paralax_1.png" height="300px"><br>
-                    <li>
-                        <a href="">
-                        <image src="pokemon_translation_along_circle.gif" height="240px"><br>
-                            <h4><strong>Occlusion Aware - Reveals hidden parts of the scene not visible from 2D Environment maps</strong></h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                        <image src="pokemon_translation_along_circle_depth.gif" height="240px"><br>
-                            <h4><strong>Environment Depth to closeby objects from Reflections Casted on Unknown Objects</strong></h4>
-                        </a>
-                    </li>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <video id="scan" width="100%" playsinline autoplay loop muted >
+                                <source src="images/scanning.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <video id="multiplex" width="100%" playsinline autoplay loop muted >
+                                <source src="images/multiplex.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
                 </ul>
                 <p class="text-justify">
                     Modeling reflections on object surfaces as a 5D env. radiance field enables beyond field-of-view novel-view synthesis, including rendering of the environment from translated virtual camera views. Depth and environment radiance of translated and parallax views can further enable imaging behind occluders, for example revealing the tails behind the primary Pokemon occluders.
