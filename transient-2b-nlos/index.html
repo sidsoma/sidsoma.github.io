@@ -189,36 +189,15 @@
                 <h3>
                     Linear Forward Model w.r.t. Shadow Transients
                 </h3>
-                <ul class="nav nav-pills nav-justified">
-                    <!-- <li>
-                        <a href="">
-                        <image src="exp51_lv_forward_sphere_2gpus_vcam_rgb_254x254_3_train_views.gif" height="180px"><br>
-                            <h4><strong>Radiance from Env. Radiance Field rendered at novel views</strong></h4>
-                        </a>
-                    </li> -->
-                    <li>
-                        <a href="">
-                        <image src="lv_sphere_depth.gif" height="180px"><br>
-                            <h4><strong>Living Room Depth from Object's Surface when modeled as a Virtual Sensor</strong></h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                        <image src="exp52_pokemon_2gpus_twobdepth_254x254_3_train_views.gif" height="180px"><br>
-                            <h4><strong>Pokemon Depth from Object's Surface when modeled as a Virtual Sensor</strong></h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                        <image src="exp51_lv_forward_sphere_2gpus_vcam_depth_254x254_3_train_views.gif" height="180px"><br>
-                            <h4><strong>Rendering Depth at novel view points by querying the Env. Radiance Field</strong></h4>
-                        </a>
-                    </li>
-                </ul>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <video id="shape_from_shadows" width="100%" playsinline autoplay loop muted >
+                            <source src="images/shadow-transients-sped-up.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
                 <p class="text-justify">
-                    From Multi-View images of an object with unknown geometry and diffuse texture, we convert the <b> object into a radiance-field camera</b> by modelling reflections as a 2D projection of a 5D environment radiance field onto the object surface. 
-                    The radiance field is queried on points closer to the object to enable <strong> Beyond Field-Of-View Novel View Synthesis</strong>. 
-                    Our framework can disentangle complex diffuse and specular radiance to uncover the hidden environment- notice how the <b>fireplace is occluded</b> in the multi-view images yet our framework can recover and interpolates between reflections to renders novel views and depth. 
+                A linear model can be derived in terms of the shadow transients in the form
                 </p>
             </div>
         </div>
