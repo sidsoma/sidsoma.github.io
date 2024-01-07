@@ -54,16 +54,16 @@
     <tr onmouseout="plato_stop()" onmouseover="plato_start()">
       <td style="padding:20px;width:25%;vertical-align:middle">
 	      <div class="one">
-		<div class="two" id='specular_image'><img src='images/specular_results.gif' width="160" height="160" style="border-style: none"></div>
+		<div class="two" id='plato_image'><img src='images/specular_results.gif' width="160" height="160" style="border-style: none"></div>
 		<img src='images/specular_geometry.png' width="160" height="160" style="border-style: none">
 	      </div>
 	      <script type="text/javascript">
 		function plato_start() {
-		  document.getElementById('specular_image').style.opacity = "1";
+		  document.getElementById('plato_image').style.opacity = "1";
 		}
 
 		function plato_stop() {
-		  document.getElementById('specular_image').style.opacity = "0";
+		  document.getElementById('plato_image').style.opacity = "0";
 		}
 		plato_stop()
 	      </script>
