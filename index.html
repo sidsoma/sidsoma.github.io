@@ -50,7 +50,43 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 				
-    
+    <!-- PlatoNeRF -->
+    <tr onmouseout="specular_stop()" onmouseover="specular_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+	      <div class="one">
+		<div class="two" id='specular_image'><img src='images/specular_results.gif' width="160" height="160" style="border-style: none"></div>
+		<img src='images/specular_geometry.png' width="160" height="160" style="border-style: none">
+	      </div>
+	      <script type="text/javascript">
+		function specular_start() {
+		  document.getElementById('specular_image').style.opacity = "1";
+		}
+
+		function specular_stop() {
+		  document.getElementById('specular_image').style.opacity = "0";
+		}
+		specular_stop()
+	      </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+				<a href="https://platonerf.github.io/">
+          <papertitle>PlatoNeRF: 3D Reconstruction in Plato's Cave via Single-View Two-Bounce Lidar</papertitle>
+        </a>
+        <br>
+        
+<a href="">Tzofi Klinghoffer</a>, <strong>Siddharth Somasundaram</strong>, <a href="https://scholar.google.es/citations?hl=en&user=cnYhDZUAAAAJ&view_op=list_works&sortby=pubdate">Joseph Hollmann</a>, <a href="https://web.media.mit.edu/~raskar/">Ramesh Raskar</a>
+        <br>
+        <em>Under Review 2023</em>
+        <br>
+				<a href="https://platonerf.github.io/">[project page]</a>  
+				<a href="https://github.com/facebookresearch/PlatoNeRF">[code]</a>
+	      			<a href="https://github.com/facebookresearch/PlatoNeRF/releases/tag/v0">[data]</a>
+	      			<a href="https://arxiv.org/pdf/2312.14239.pdf">[paper]</a>
+        <p></p>
+        <p>Reconstructing scene geometry from a single view using two-bounce signals captured by a single-photon lidar.</p>
+      </td>
+    </tr>
+		
     <tr onmouseout="twonlos_stop()" onmouseover="twonlos_start()"  bgcolor="#ffffd0">
       <td style="padding:20px;width:25%;vertical-align:middle">
 	      <div class="one">
