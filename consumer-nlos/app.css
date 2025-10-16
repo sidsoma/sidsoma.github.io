@@ -13,16 +13,86 @@
     margin-bottom: 1em;
 }
 
-.capability-section {
-    margin: 3em 0;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-.capability-card {
-    margin-bottom: 2em;
+.capability-section {
+    margin: 0;
+    padding: 0 0 3em;
+    background-color: transparent;
+    color: inherit;
+}
+
+.capability-section--full {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.capability-content {
+    width: 100%;
+    padding: 0 4vw;
+    box-sizing: border-box;
 }
 
 .capability-video {
     width: 100%;
+    max-width: 100%;
     height: auto;
+    max-height: 360px;
     display: block;
+    margin: 0 auto;
+}
+
+.capability-title {
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.capability-figure {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 360px;
+    display: block;
+    margin: 0 auto;
+}
+
+.capability-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 2px solid #ccc;
+    background-color: #fff;
+}
+
+.capability-cell {
+    padding: 0 2vw 2em;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 767px) {
+    .capability-content {
+        padding: 0 3vw;
+    }
+
+    .capability-table,
+    .capability-table tbody,
+    .capability-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .capability-cell {
+        display: block;
+        width: 100%;
+        padding: 0 0 2em;
+    }
 }
