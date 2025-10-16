@@ -50,6 +50,41 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+<!-- Consumer NLOS -->
+<tr onmouseout="consumer_nlos_stop()" onmouseover="consumer_nlos_start()">
+  <td style="padding:20px;width:25%;vertical-align:middle">
+    <div class="one">
+<div class="two" id='consumer_nlos_image'><img src='images/consumer_nlos_results.gif' width="160" height="160" style="border-style: none"></div>
+<img src='images/consumer_nlos_teaser.png' width="160" height="160" style="border-style: none">
+    </div>
+    <script type="text/javascript">
+function consumer_nlos_start() {
+  document.getElementById('consumer_nlos_image').style.opacity = "1";
+}
+
+function consumer_nlos_stop() {
+    document.getElementById('consumer_nlos_image').style.opacity = "0";
+}
+consumer_nlos_stop()
+    </script>
+  </td>
+  <td style="padding:20px;width:75%;vertical-align:middle">
+    <a href="https://sidsoma.github.io/consumer-nlos/">
+      <papertitle>Imaging Hidden Objects with Consumer LiDAR using Motion-Induced Aperture Sampling</papertitle>
+    </a>
+    <br>
+    
+<strong>Siddharth Somasundaram</strong>, Aaron Young, Akshat Dave, Adithya Pediredla, Ramesh Raskar
+    <br>
+    <em>Under Review</em>  
+    <br>
+          <a href="https://sidsoma.github.io/consumer-nlos/">[project page]</a>
+    <p></p>
+    <p>Real-time non-line-of-sight imaging using off-the-shelf consumer LiDAR hardware.</p>
+  </td>
+</tr>
+
+
 <!-- Event-SPAD Fusion -->
 <tr onmouseout="event_spad_fusion_stop()" onmouseover="event_spad_fusion_start()">
   <td style="padding:20px;width:25%;vertical-align:middle">
