@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Consumer NLOS</title>
+    <title>Transient Two-Bounce NLOS</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,19 +31,16 @@
     <script src="app.js"></script>
 </head>
 
-<body style="margin:0; padding:0; background-color:white; font-family: 'Times New Roman';">
-    <div id="main" style="width:100%; max-width:100%; overflow-x:hidden; padding-left:0; padding-right:0;">
-        <div style="width:100%; margin:0; padding:0;">
-            <h1 style="text-align:center; width:100%; margin:0; padding-top:25px; font-family: 'Times New Roman';">
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
                 <b>Seeing Hidden Objects with Consumer LiDAR</b><br>
-                <!-- <small>
-                    Under Review
-                </small>
-            </h1> -->
+            </h1>
         </div>
         <div style="width:100%; text-align:center; padding:0; margin:0;">
             <ul class="list-inline" style="display:flex; justify-content:center; flex-wrap:wrap; gap:40px; list-style-type:none; margin:30px 0 0 0; padding:0;">
-                <li style="flex:0 0 auto; min-width:180px; font-size: 1.5em;">
+                <li style="flex:0 0 auto; min-width:180px; font-size: 1.2em;">
                     <a href="https://sidsoma.github.io/">Siddharth Somasundaram</a>
                     <br/>MIT
                 </li>
@@ -66,9 +63,8 @@
             </ul>
         </div>
 
-
-
-        <table style="width:80%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+        <!-- Tracking Hidden Objects -->
+        <table style="width:100%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             <tr>
                 <td colspan="2" style="padding:10px 0px 0px 12px; text-align:center; font-size:1.8em; font-weight: bold;">
                     Tracking Hidden Objects
@@ -81,10 +77,6 @@
                         For safety critical applications, we want to be able to track hidden objects in real-time to avoid colliding with them.
                     </div>
                 </td>
-
-
-
-                
                 <td style="padding:16px; text-align:center; vertical-align:middle;">
                     <video playsinline autoplay loop muted style="max-width:100%; border-radius:6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04);">
                         <source src="images/diffuse_tracking_final.mov" />
@@ -94,7 +86,8 @@
             </tr>
         </table>
 
-        <table style="width:80%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+        <!-- Using Hidden Objects to Localize Yourself -->
+        <table style="width:100%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             <tr>
                 <td colspan="2" style="padding:10px 0px 0px 12px; text-align:center; font-size:1.8em; font-weight: bold;">
                     Using Hidden Objects to Localize Yourself
@@ -116,7 +109,8 @@
             </tr>
         </table>
 
-        <table style="width:80%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+        <!-- Pose Reconstruction and Tracking -->
+        <table style="width:100%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             <tr>
                 <td colspan="3" style="padding:10px 0px 0px 12px; text-align:center; font-size:1.8em; font-weight: bold;">
                     Pose Reconstruction and Tracking
@@ -146,67 +140,64 @@
             </tr>
         </table>
 
-
-    <table style="width:80%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-        <tr>
-            <td colspan="2" style="padding:10px 0px 0px 12px; text-align:center; font-size:1.8em; font-weight: bold;">
-                Try it yourself!
-            </td>
-        </tr>
-        <tr>
-            <td style="padding:16px; text-align:left; vertical-align:middle; width:40%; font-size: 1.5em;">
-                <style>
-                    .circle-ol {
-                        counter-reset: circle-li;
-                        list-style: none;
-                        padding-left: 0;
-                    }
-                    .circle-ol li {
-                        counter-increment: circle-li;
-                        position: relative;
-                        margin-left: 0;
-                        padding-left: 46px;
-                        margin-bottom: 10px;
-                        font-size: 1.25em;
-                    }
-                    .circle-ol li::before {
-                        content: counter(circle-li);
-                        position: absolute;
-                        left: 0;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        width: 35px;
-                        height: 35px;
-                        background: #bfdef8e8;
-                        border: 2px solid hsl(0, 0%, 0%);
-                        border-radius: 50%;
-                        text-align: center;
-                        line-height: 28px;
-                        font-weight: 100;
-                        font-size: 1.13em;
-                        color: hsl(0, 0%, 0%);
-                        box-sizing: border-box;
-                        display: inline-block;
-                    }
-                </style>
-                <ol class="circle-ol">
-                    <li>Order the <a href="https://sidsoma.github.io/consumer-nlos">ST sensor</a> (~$100).</li>
-                    <li>Download our <a href="https://sidsoma.github.io/consumer-nlos">code</a>.</li>
-                    <li>Track hidden objects in real-time!</li>
-                </ol>
-            </td>
-            <td style="padding:16px; text-align:center; vertical-align:middle;">
-                <video playsinline autoplay loop muted style="max-width:100%; border-radius:6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04);">
-                    <source src="images/diffuse_tracking_st.mov" />
-                    Your browser does not support the video tag.
-                </video>
-            </td>
-        </tr>
-    </table>
-
+        <!-- Try it yourself! -->
+        <table style="width:100%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <tr>
+                <td colspan="2" style="padding:10px 0px 0px 12px; text-align:center; font-size:1.8em; font-weight: bold;">
+                    Try it yourself (coming soon)!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:16px; text-align:left; vertical-align:middle; width:40%; font-size: 1.5em;">
+                    <style>
+                        .circle-ol {
+                            counter-reset: circle-li;
+                            list-style: none;
+                            padding-left: 0;
+                        }
+                        .circle-ol li {
+                            counter-increment: circle-li;
+                            position: relative;
+                            margin-left: 0;
+                            padding-left: 46px;
+                            margin-bottom: 10px;
+                            font-size: 1.25em;
+                        }
+                        .circle-ol li::before {
+                            content: counter(circle-li);
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 35px;
+                            height: 35px;
+                            background: #bfdef8e8;
+                            border: 2px solid hsl(0, 0%, 0%);
+                            border-radius: 50%;
+                            text-align: center;
+                            line-height: 28px;
+                            font-weight: 100;
+                            font-size: 1.13em;
+                            color: hsl(0, 0%, 0%);
+                            box-sizing: border-box;
+                            display: inline-block;
+                        }
+                    </style>
+                    <ol class="circle-ol">
+                        <li>Order the <a href="https://sidsoma.github.io/consumer-nlos">ST sensor</a> (~$100).</li>
+                        <li>Download our <a href="https://sidsoma.github.io/consumer-nlos">code</a>.</li>
+                        <li>Track hidden objects in real-time!</li>
+                    </ol>
+                </td>
+                <td style="padding:16px; text-align:center; vertical-align:middle;">
+                    <video playsinline autoplay loop muted style="max-width:100%; border-radius:6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04);">
+                        <source src="images/diffuse_tracking_st.mov" />
+                        Your browser does not support the video tag.
+                    </video>
+                </td>
+            </tr>
+        </table>
+    
     </div>
-
-
-
 </body>
 </html>
