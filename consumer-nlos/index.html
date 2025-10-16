@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Transient Two-Bounce NLOS</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <link rel="icon" type="image/png" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="app.css">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                <b>Imaging Hidden Objects with Consumer LiDAR using Motion-Induced Aperture Sampling</b><br>
+                <small>
+                    Under Review
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://sidsoma.github.io/">
+                          Siddharth Somasundaram
+                        </a>
+                        </br>MIT
+                    </li>
+                    <li>
+                        <a href="https://aaronyoung5.github.io/">
+                          Aaron Young
+                        </a>
+                        </br>MIT
+                    </li>
+                    <li>
+                        <a href="https://akshatdave.github.io/">
+                          Akshat Dave
+                        </a>
+                        </br>MIT
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://sites.google.com/view/adithyapediredla/">
+                          Adithya Pedirelda
+                        </a>
+                        </br>Dartmouth College
+                    </li>
+                    <li>
+                        <a href="https://web.media.mit.edu/~raskar/">
+                          Ramesh Raskar
+                        </a>
+                        </br>MIT
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="">
+                            <image src="" height="120px"><br>
+                                <h4><strong>Paper (coming soon!)</strong></strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <image src="" height="120px"><br>
+                                <h4><strong>Supplementary Material (coming soon!)</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <image src="" height="120px"><br>
+                                <h4><strong>Technical Video (coming soon!)</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <image src="" height="120px"><br>
+                                <h4><strong>Code (coming soon!)</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    LiDARs are being increasingly deployed for consumer imaging in handheld, wearable, and robotic applications. These sensors can capture the time-of-flight of light at picosecond resolution, which in principle, enables them to capture information about objects hidden from their field of view. While such non-line-of-sight (NLOS) imaging capabilities have been shown on research-grade LiDARs, they are challenging to achieve on consumer devices due to poor signal quality resulting from low laser power, low spatial resolution, and object and camera motion. Inspired by burst photography and synthetic aperture radar, we propose a multi-frame fusion strategy to overcome these challenges and demonstrate NLOS imaging on consumer LiDAR. We first introduce the motion-induced aperture sampling model to unify the effects of object shape, object motion, and camera motion under a single measurement model. Using this model, we demonstrate several NLOS capabilities on a smartphone-grade LiDAR: (1) 3D reconstruction, (2) single and multi-object tracking, and (3) camera localization using hidden objects. Previously, NLOS imaging capabilities were largely restricted to bulky and expensive research-grade hardware that requires extensive setup and calibration. Our results represent a shift towards <i>plug-and-play NLOS imaging</i>, where anyone can image hidden objects with off-the-shelf hardware (<100$) and no additional setup. We believe that democratization of such capabilities will advance consumer applications of NLOS imaging. 
+                </p>
+            </div>
+        </div>
+        
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    [Prior Work] Two-Bounce NLOS Imaging Using Individual Shadows
+                </h3>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <video id="shape_from_shadows" width="100%" playsinline autoplay loop muted >
+                            <source src="images/shape_from_shadows2.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+                <p class="text-justify">
+                    In a two-bounce NLOS configuration, a hidden object lies behind an occluder but is surrounded by two relay surfaces. By scanning a laser point across one relay surface and measuring cast shadows on the other wall, it is possible to reconstruct the 3D shape of the occluded object. 
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    [Our Work] Two-Bounce NLOS Imaging with Multiplexed Shadows
+                </h3>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <table class="setup-table" id="setup-table">
+                            <tr>
+                                <td style="text-align: center">
+                                    <video id="scan" width="100%" playsinline autoplay loop muted >
+                                    <source src="images/scanning.mp4" type="video/mp4" />
+                                    </video>
+                                </td>
+                                <td style="text-align: center">
+                                    <video id="scan" width="100%" playsinline autoplay loop muted >
+                                    <source src="images/multiplex.mp4" type="video/mp4" />
+                                    </video>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <p class="text-justify">
+                    We obviate the need for laser scanning inherent to prior NLOS methods by using multiplexed illumination. We use a single-photon avalanche diode (SPAD) to demultiplex light paths based on their time of flight. Our method is a promising avenue for few-shot two-bounce NLOS imaging.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Linear Forward Model w.r.t. Shadow Transients
+                </h3>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <video id="shape_from_shadows" width="100%" playsinline autoplay loop muted >
+                            <source src="images/shadow-transients-sped-up.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+                <p class="text-justify">
+                We decompose the measured time-of-flight profile into two transient profiles: <strong>light transients</strong> and <strong>shadow transients</strong>. The sum of these two transients is the <strong>empty transient</strong>, which is what would have been observed by the sensor if there was no hidden object. The light transient measures light that arrives at the sensor (i.e. what the sensor measures), whereas the shadow transient measures light that doesn't arrive at the sensor because it was blocked by the hidden object. The above animations show what the empty transient, light transient, and shadow transient would look like under flash illumination. Note that all aforementioned transients are two-bounce transients. A linear model can be derived in terms of the shadow transients in the form
+                </p>
+                <center><image src="images/linear-model.png" class="center" alt="overview" width="75%"></center><br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Backprojection Reconstruction
+                </h3>
+                <p><strong>Simulated Results: Effect of Temporal Resolution</strong></p>
+                <div class="col-md-10 col-md-offset-1">
+                        <p style="text-align:center;"> <image src="images/sim_analysis_nlos.png" width="100%">
+                </div>
+                <p><strong>Experimental Results: Number of Measurements vs. Temporal Resolution</strong></p>
+                <div class="col-md-10 col-md-offset-1">
+                    <p style="text-align:center;"> <image src="images/real_analysis.png" width="100%">
+                </div>
+                <p><strong>Experimental Results: Spatial Resolution vs. Temporal Resolution</strong></p>
+                <div class="col-md-10 col-md-offset-1">
+                    <p style="text-align:center;"> <image src="images/real_analysis_spatial_res.png" width="100%">
+                </div>
+                <p class="text-justify">
+                </p>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Applications
+                </h3>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                            <p style="text-align:center;"> <image src="images/applications.png" width="100%">
+                    </div>
+                </div>
+                <p class="text-justify">
+                    There are many real-world situations with two relay surfaces in which one would want to navigate their surroundings quickly. For example, imagine an autonomous vehicle being able to see in front of the car ahead of it by using two-bounce light off the sides of a tunnel. We believe that the ideas introduced in this paper will inspire future work in few-shot NLOS imaging.
+                </p>
+            </div>
+        </div> -->
+
+       <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{somasundaram2025imaging,
+  title={Imaging Hidden Objects with Consumer LiDAR using Motion-Induced Aperture Sampling},
+  author={Somasundaram, Siddharth and Young, Aaron and Dave, Akshat and Pediredla, Adithya and Raskar, Ramesh},
+  booktitle={Under Review},
+  year={2025}
+}
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                SS and AY are supported by NSF Graduate Research Fellowship under Grant # 2141064.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
