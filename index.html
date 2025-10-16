@@ -49,7 +49,43 @@
           </tr>
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-				
+
+<!-- Handheld Mirror Mapping -->
+<tr onmouseout="handheld_mirror_mapping_stop()" onmouseover="handheld_mirror_mapping_start()">
+  <td style="padding:20px;width:25%;vertical-align:middle">
+    <div class="one">
+<div class="two" id='plato_image'><img src='images/handheld_mirror_results.gif' width="160" height="160" style="border-style: none"></div>
+<img src='images/handeld_mirror_teaser.png' width="160" height="160" style="border-style: none">
+    </div>
+    <script type="text/javascript">
+function plato_start() {
+  document.getElementById('handheld_mirror_image').style.opacity = "1";
+}
+
+function plato_stop() {
+  document.getElementById('handheld_mirror_image').style.opacity = "0";
+}
+handheld_mirror_mapping_stop()
+    </script>
+  </td>
+  <td style="padding:20px;width:75%;vertical-align:middle">
+    <a href="">
+      <papertitle>Handheld Mapping of Specular Surfaces using Consumer-Grade Flash LiDAR</papertitle>
+    </a>
+    <br>
+    
+Tsung-Han Lin, Connor Henley, <strong>Siddharth Somasundaram</strong>, Akshat Dave, Moshe Laifenfeld, Ramesh Raskar
+    <br>
+    <em>ICCP 2024</em> 
+    <br>
+    <a href="https://lidarmirror.github.io/">[project page]</a>  
+          <a href="https://lidarmirror.github.io/static/pdfs/ICCP2024_MirrorMapping.pdf">[paper]</a>
+    <p></p>
+    <p>Mapping specular surfaces using natural handheld motion of a LiDAR.</p>
+  </td>
+</tr>
+
+
 <!-- PlatoNeRF -->
     <tr onmouseout="plato_stop()" onmouseover="plato_start()">
       <td style="padding:20px;width:25%;vertical-align:middle">
