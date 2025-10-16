@@ -12,3 +12,17 @@
     margin-top: 2em;
     margin-bottom: 1em;
 }
+
+.capability-section {
+    margin: 3em 0;
+}
+
+.capability-card {
+    margin-bottom: 2em;
+}
+
+.capability-video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
