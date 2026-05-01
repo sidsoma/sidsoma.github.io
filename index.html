@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siddharth Somasundaram</title>
+  <meta name="author" content="Siddharth Somasundaram">
+  <meta name="description" content="PhD student at MIT Media Lab working on computational photography and single-photon imaging.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Prevent flash of wrong theme -->
+  <script>if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');</script>
+
+  <style>
+    /* ── THEME VARIABLES ── */
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --surface-alt: #f2f2f5;
+      --border: #e4e4ea;
+      --border-strong: #c4c4ce;
+      --text-primary: #111118;
+      --text-secondary: #52525b;
+      --text-muted: #8c8c9a;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --accent-border: #bfdbfe;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+      --shadow-hover: 0 8px 24px rgba(0,0,0,0.11), 0 4px 8px rgba(0,0,0,0.07);
+      --max-width: 860px;
+      --transition: 0.2s ease;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f0f14;
+      --surface: #18181f;
+      --surface-alt: #21212b;
+      --border: #2d2d3c;
+      --border-strong: #3e3e52;
+      --text-primary: #ededf2;
+      --text-secondary: #9595a8;
+      --text-muted: #5c5c70;
+      --accent: #6ba3f5;
+      --accent-light: rgba(107,163,245,0.12);
+      --accent-border: rgba(107,163,245,0.35);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.5);
+      --shadow-hover: 0 8px 24px rgba(0,0,0,0.6);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-primary);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,250,250,0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition), border-color var(--transition);
+    }
+    [data-theme="dark"] nav { background: rgba(15,15,20,0.88); }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 28px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a.active { color: var(--accent); font-weight: 600; }
+
+    /* ── THEME TOGGLE ── */
+    .theme-toggle {
+      background: none;
+      border: 1.5px solid var(--border-strong);
+      border-radius: 8px;
+      padding: 5px 7px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+    .icon-moon { display: block; }
+    .icon-sun  { display: none; }
+    [data-theme="dark"] .icon-moon { display: none; }
+    [data-theme="dark"] .icon-sun  { display: block; }
+
+    /* ── LAYOUT ── */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 28px 80px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 36px;
+      align-items: center;
+      padding: 60px 0 52px;
+    }
+    .hero-name {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      color: var(--text-primary);
+    }
+    .hero-subtitle {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 17px;
+      color: var(--text-secondary);
+      margin-top: 10px;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+    .hero-bio p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .hero-bio p:last-of-type { margin-bottom: 0; }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px 6px 9px;
+      height: 34px;
+      border-radius: 20px;
+      border: 1.5px solid var(--border-strong);
+      color: var(--text-secondary);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+    .hero-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(37,99,235,0.18);
+    }
+
+    .hero-photo-wrap { display: flex; justify-content: flex-end; }
+    .hero-photo {
+      width: 258px;
+      height: 258px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--surface);
+      box-shadow: var(--shadow-md);
+      transition: box-shadow var(--transition);
+    }
+    .hero-photo:hover { box-shadow: var(--shadow-hover); }
+
+    /* ── DIVIDER ── */
+    .section-divider { border: none; border-top: 1.5px solid var(--border-strong); margin: 0; }
+
+    /* ── SECTION HEADING ── */
+    .section-header {
+      padding: 44px 0 28px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .section-title {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: var(--text-primary);
+    }
+    .view-all-link {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.85;
+      transition: gap var(--transition), opacity var(--transition);
+    }
+    .view-all-link:hover { gap: 7px; opacity: 1; }
+
+    /* ── PAPER CARDS ── */
+    .papers { display: flex; flex-direction: column; gap: 4px; }
+
+    .paper-card {
+      display: grid;
+      grid-template-columns: 168px 1fr;
+      gap: 28px;
+      align-items: center;
+      padding: 24px 20px;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid transparent;
+      transition: all var(--transition);
+    }
+    .paper-card:hover {
+      border-color: var(--border);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+
+    .paper-img-wrap {
+      position: relative;
+      width: 168px;
+      height: 140px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--surface-alt);
+    }
+    .paper-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .paper-img-wrap .img-hover {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .paper-card:hover .img-hover { opacity: 1; }
+
+    .paper-title {
+      font-size: 14.5px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--text-primary);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 7px;
+      transition: color var(--transition);
+    }
+    .paper-title:hover { color: var(--accent); }
+
+    .paper-authors {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+    .paper-authors strong { color: var(--text-primary); font-weight: 600; }
+
+    .paper-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .venue-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 100px;
+      background: var(--surface-alt);
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-strong);
+      line-height: 1.6;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .award-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      line-height: 1.6;
+      white-space: nowrap;
+    }
+    .award-badge { background: #fffbeb; color: #92400e; border: 1.5px solid #fbbf24; }
+    [data-theme="dark"] .award-badge { background: rgba(251,191,36,0.15); color: #fbbf24; border-color: rgba(251,191,36,0.4); }
+
+    .paper-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .paper-links { display: flex; flex-wrap: wrap; gap: 6px; }
+    .paper-link {
+      display: inline-block;
+      font-size: 12.5px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      transition: all var(--transition);
+    }
+    .paper-link:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hero { grid-template-columns: 1fr; gap: 28px; padding: 40px 0 36px; }
+      .hero-photo-wrap { justify-content: flex-start; order: -1; }
+      .hero-photo { width: 170px; height: 170px; }
+      .hero-name { font-size: 28px; }
+      .paper-card { grid-template-columns: 1fr; gap: 16px; }
+      .paper-img-wrap { width: 100%; height: 180px; }
+      .section-header { flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <ul class="nav-links">
+        <li><a href="#" class="active">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="assets/data/CV_Siddharth_Somasundaram.pdf">CV</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <!-- Moon: shown in light mode -->
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <!-- Sun: shown in dark mode -->
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="about">
+      <div class="hero-bio">
+        <h1 class="hero-name">Siddharth Somasundaram</h1>
+        <p class="hero-subtitle">PhD Student<br>MIT Media Lab</p>
+
+        <p>
+          I am a PhD student at the <a href="https://www.media.mit.edu/people/sidsoma/overview/" style="color:var(--accent);text-decoration:none;font-weight:500;">MIT Media Lab</a> in Cambridge, MA, working with Prof. Ramesh Raskar in the Camera Culture group. My research is currently supported by the NSF Graduate Research Fellowship.
+        </p>
+        <p>
+          I previously graduated from UCLA Electrical Engineering in 2021, where I worked with Prof. Diana Huffaker on semiconductor devices and Prof. Achuta Kadambi on computational imaging.
+        </p>
+        <p>
+          My goal is to enable new vision capabilities by designing sensing systems that perceive the world differently from the human eye. My current interests are in single-photon and time-of-flight imaging, with applications in 3D vision, low-light, high-speed, and non-line-of-sight imaging.
+        </p>
+
+        <div class="hero-links">
+          <a class="hero-link" href="mailto:sidsoma@mit.edu">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Email
+          </a>
+          <a class="hero-link" href="https://scholar.google.com/citations?hl=en&user=WnLfhFQAAAAJ">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3 1 9l11 6 9-4.91V17h2V9z"/>
+              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17z"/>
+            </svg>
+            Scholar
+          </a>
+          <a class="hero-link" href="https://twitter.com/sidartsoma">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            Twitter
+          </a>
+          <a class="hero-link" href="https://github.com/sidsoma/">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+            GitHub
+          </a>
+          <a class="hero-link" href="https://www.linkedin.com/in/sidsoma/">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="images/sidsoma-circle.png" alt="Siddharth Somasundaram">
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section id="publications">
+      <div class="section-header">
+        <h2 class="section-title">Selected Publications</h2>
+        <a class="view-all-link" href="publications.html">View all publications &rarr;</a>
+      </div>
+      <div id="papers-container" class="papers"></div>
+    </section>
+
+  </main>
+
+  <script src="papers.js"></script>
+  <script>
+    renderPapers('papers-container', PAPERS.filter(p => p.selected));
+
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

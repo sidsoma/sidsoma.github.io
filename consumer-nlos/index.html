@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Transient Two-Bounce NLOS</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <link rel="icon" type="image/png" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="app.css">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                <b>Seeing Hidden Objects with Consumer LiDAR</b><br>
+            </h1>
+        </div>
+        <div style="width:100%; text-align:center; padding:0; margin:0;">
+            <ul class="list-inline" style="display:flex; justify-content:center; flex-wrap:wrap; gap:40px; list-style-type:none; margin:30px 0 0 0; padding:0;">
+                <li style="flex:0 0 auto; min-width:180px; font-size: 1.3em;">
+                    <a href="https://sidsoma.github.io/">Siddharth Somasundaram</a>
+                    <br/>MIT
+                </li>
+                <li style="flex:0 0 auto; min-width:180px; font-size: 1.3em;">
+                    <a href="https://aaronyoung5.github.io/">Aaron Young</a>
+                    <br/>MIT
+                </li>
+                <li style="flex:0 0 auto; min-width:180px; font-size: 1.3em;">
+                    <a href="https://akshatdave.github.io/">Akshat Dave</a>
+                    <br/>MIT
+                </li>
+                <li style="flex:0 0 auto; min-width:180px; font-size: 1.3em;">
+                    <a href="https://sites.google.com/view/adithyapediredla/">Adithya Pediredla</a>
+                    <br/>Dartmouth College
+                </li>
+                <li style="flex:0 0 auto; min-width:180px; font-size: 1.3em;">
+                    <a href="https://web.media.mit.edu/~raskar/">Ramesh Raskar</a>
+                    <br/>MIT
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tracking Hidden Objects -->
+        <table style="width:100%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <tr>
+                <td colspan="2" style="padding:10px 0px 0px 12px; text-align:center; font-size:1.8em; font-weight: bold;">
+                    Tracking Hidden Objects
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:16px; text-align:center; vertical-align:middle; width:350px">
+                    <img src="images/tracking.png" alt="Multi-hand tracking figure" style="max-width:100%; height:auto; border-radius:6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04);">
+                    <div style="margin-top: 10px; font-size: 1.2em; color: #444;">
+                        For safety critical applications, we want to be able to track hidden objects in real-time to avoid colliding with them.
+                    </div>
+                </td>
+                <td style="padding:16px; text-align:center; vertical-align:middle;">
+                    <video playsinline autoplay loop muted style="max-width:100%; border-radius:6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04);">
+                        <source src="images/diffuse_tracking_final.mov" />
+                        Your browser does not support the video tag.
+                    </video>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Using Hidden Objects to Localize Yourself -->
+        <table style="width:100%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <tr>
+                <td colspan="2" style="padding:10px 0px 0px 12px; text-align:center; font-size:1.8em; font-weight: bold;">
+                    Using Hidden Objects to Localize Yourself
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:16px; text-align:center; vertical-align:middle; width:350px">
+                    <img src="images/localization.png" alt="Multi-hand tracking figure" style="max-width:100%; height:auto; border-radius:6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04);">
+                    <div style="margin-top: 10px; font-size: 1.2em; color: #444;">
+                        Autonomous robots need to keep track of their location in real-time while navigating through unknown environments.
+                    </div>
+                </td>
+                <td style="padding:16px; text-align:center; vertical-align:middle; ">
+                    <video playsinline autoplay loop muted style="max-width:100%; border-radius:6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04);">
+                        <source src="images/handheld_cam_localization.mov" />
+                        Your browser does not support the video tag.
+                    </video>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Pose Reconstruction and Tracking -->
+        <table style="width:100%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <tr>
+                <td colspan="3" style="padding:10px 0px 0px 12px; text-align:center; font-size:1.8em; font-weight: bold;">
+                    Pose Reconstruction and Tracking
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:16px; text-align:center; vertical-align:middle; width:350px;">
+                    <img src="images/reconstruction.png" alt="Multi-hand tracking figure" style="max-width:100%; height:auto; border-radius:6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04);">
+                    <div style="margin-top: 10px; font-size: 1.2em; color: #444;">
+                    AR systems need to be able to determine the user's body pose to provide seamless integration with the virtual world.
+                    </div>
+                </td>
+                <td style="padding:16px; text-align:center; vertical-align:middle;">
+                    <div style="margin-bottom: 8px; font-size: 1.3em; font-weight: 500;">Hand Tracking</div>
+                    <video playsinline autoplay loop muted style="max-width:100%; border-radius:6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); height:420px">
+                        <source src="images/hand_tracking.mov" />
+                        Your browser does not support the video tag.
+                    </video>
+                </td>
+                <td style="padding:16px; text-align:center; vertical-align:middle;">
+                    <div style="margin-bottom: 8px; font-size: 1.3em; font-weight: 500;">Pose Reconstruction</div>
+                    <video playsinline autoplay loop muted style="max-width:100%; border-radius:6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); height:420px">
+                        <source src="images/hand_tracking.mov" />
+                        Your browser does not support the video tag.
+                    </video>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Try it yourself! -->
+        <table style="width:100%; margin:16px auto 16px auto; border-collapse:separate; background:rgb(230, 230, 230); border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <tr>
+                <td colspan="2" style="padding:10px 0px 0px 12px; text-align:center; font-size:1.8em; font-weight: bold;">
+                    Try it yourself (coming soon)!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:16px; text-align:left; vertical-align:middle; width:40%; font-size: 1.5em;">
+                    <style>
+                        .circle-ol {
+                            counter-reset: circle-li;
+                            list-style: none;
+                            padding-left: 0;
+                        }
+                        .circle-ol li {
+                            counter-increment: circle-li;
+                            position: relative;
+                            margin-left: 0;
+                            padding-left: 46px;
+                            margin-bottom: 10px;
+                            font-size: 1.25em;
+                        }
+                        .circle-ol li::before {
+                            content: counter(circle-li);
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 35px;
+                            height: 35px;
+                            background: #bfdef8e8;
+                            border: 2px solid hsl(0, 0%, 0%);
+                            border-radius: 50%;
+                            text-align: center;
+                            line-height: 28px;
+                            font-weight: 100;
+                            font-size: 1.13em;
+                            color: hsl(0, 0%, 0%);
+                            box-sizing: border-box;
+                            display: inline-block;
+                        }
+                    </style>
+                    <ol class="circle-ol">
+                        <li>Order the <a href="https://sidsoma.github.io/consumer-nlos">ST sensor</a> (~$100).</li>
+                        <li>Download our <a href="https://github.com/sidsoma/consumer-nlos">code</a>.</li>
+                        <li>Track hidden objects in real-time!</li>
+                    </ol>
+                </td>
+                <td style="padding:16px; text-align:center; vertical-align:middle;">
+                    <video playsinline autoplay loop muted style="max-width:100%; border-radius:6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04);">
+                        <source src="images/diffuse_tracking_st.mov" />
+                        Your browser does not support the video tag.
+                    </video>
+                </td>
+            </tr>
+        </table>
+    
+    </div>
+</body>
+</html>
