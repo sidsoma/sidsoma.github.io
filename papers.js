@@ -10,7 +10,7 @@ const PAPERS = [
   {
     selected: true,
     title: 'Imaging Hidden Objects with Consumer LiDAR using Motion-Induced Aperture Sampling',
-    url: 'https://sidsoma.github.io/consumer-nlos/',
+    url: 'https://sidsoma.com/publications/consumer-nlos/',
     authors: '**Siddharth Somasundaram**, Aaron Young, Akshat Dave, Adithya Pediredla, Ramesh Raskar',
     venue: 'Nature 2026 (to appear)',
     awards: null,
@@ -18,7 +18,7 @@ const PAPERS = [
     imgBase:  'assets/projects/consumer-nlos/nlos_track.gif',
     imgHover: 'assets/projects/consumer-nlos/nlos_track.gif',
     links: [
-      { label: 'project page', url: 'https://sidsoma.github.io/consumer-nlos/' },
+      { label: 'project page', url: 'https://sidsoma.com/publications/consumer-nlos/' },
       { label: 'code',         url: 'https://github.com/sidsoma/consumer-nlos' },
     ],
   },
@@ -105,7 +105,7 @@ const PAPERS = [
   {
     selected: false,
     title: 'Role of Transients in Two-Bounce Non-Line-of-Sight Imaging',
-    url: 'https://sidsoma.github.io/transient-2b-nlos/',
+    url: 'https://sidsoma.com/publications/transient-2b-nlos/',
     authors: '**Siddharth Somasundaram**, Akshat Dave, Connor Henley, Ashok Veeraraghavan, Ramesh Raskar',
     venue: 'CVPR 2023',
     awards: null,
@@ -113,7 +113,7 @@ const PAPERS = [
     imgBase:  'assets/projects/transient-2b-nlos/twonlos_before.PNG',
     imgHover: 'assets/projects/transient-2b-nlos/twonlos_before.PNG',
     links: [
-      { label: 'project page', url: 'https://sidsoma.github.io/transient-2b-nlos/' },
+      { label: 'project page', url: 'https://sidsoma.com/publications/transient-2b-nlos/' },
       { label: 'video',        url: 'https://youtu.be/9K_oV_QY-z0' },
       { label: 'code',         url: 'https://github.com/sidsoma/Transient-2B-NLOS' },
       { label: 'paper',        url: 'https://openaccess.thecvf.com/content/CVPR2023/html/Somasundaram_Role_of_Transients_in_Two-Bounce_Non-Line-of-Sight_Imaging_CVPR_2023_paper.html' },
