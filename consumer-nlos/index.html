@@ -79,7 +79,7 @@
             <div class="background-grid">
                 <div>
                     <div style="aspect-ratio:1/1;overflow:hidden;border-radius:8px;">
-                        <video playsinline webkit-playsinline autoplay loop muted style="width:100%;height:100%;object-fit:cover;">
+                        <video playsinline webkit-playsinline autoplay loop muted preload="auto" style="width:100%;height:100%;object-fit:cover;">
                             <source src="images/background/seg1.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -87,7 +87,7 @@
                 </div>
                 <div>
                     <div style="aspect-ratio:1/1;overflow:hidden;border-radius:8px;">
-                        <video playsinline webkit-playsinline autoplay loop muted style="width:100%;height:100%;object-fit:cover;">
+                        <video playsinline webkit-playsinline autoplay loop muted preload="auto" style="width:100%;height:100%;object-fit:cover;">
                             <source src="images/background/seg2.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -95,7 +95,7 @@
                 </div>
                 <div>
                     <div style="aspect-ratio:1/1;overflow:hidden;border-radius:8px;">
-                        <video playsinline webkit-playsinline autoplay loop muted style="width:100%;height:100%;object-fit:cover;">
+                        <video playsinline webkit-playsinline autoplay loop muted preload="auto" style="width:100%;height:100%;object-fit:cover;">
                             <source src="images/background/seg3.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -123,7 +123,7 @@
     <!-- ── RESULTS (tabbed) ───────────────────────────────────────── -->
     <section id="results" class="page-section">
         <div class="wrap">
-            <h2 class="section-title">Capabilities</h2>
+            <h2 class="section-title">Non-Line-of-Sight Imaging Capabilities</h2>
 
             <div class="tabs">
                 <div class="tab-nav">
@@ -156,7 +156,7 @@
 
                 <div class="tab-panel hidden" id="tab-hand-tracking">
                     <p class="result-caption" style="text-align:center;margin-bottom:12px;">Tracking multiple objects outside the line of sight. Useful for tracking user pose in AR or for monitoring dynamic scenes.</p>
-                    <video playsinline autoplay loop muted>
+                    <video playsinline webkit-playsinline autoplay loop muted preload="auto">
                         <source src="images/results/hand_tracking.mov">
                     </video>
                 </div>
@@ -200,7 +200,7 @@
                     <li>Download our <a href="https://github.com/sidsoma/consumer-nlos">code</a> and follow the setup instructions.</li>
                     <li>Track hidden objects in real-time!</li>
                 </ol>
-                <video playsinline autoplay loop muted>
+                <video playsinline webkit-playsinline autoplay loop muted preload="auto">
                     <source src="images/results/diffuse_tracking_st.mov">
                 </video>
             </div>
@@ -224,19 +224,36 @@
     </section>
 
     <script>
-        // Autoplay videos when visible (required for Safari)
-        const videoObserver = new IntersectionObserver(entries => {
+        function playAll() {
+            document.querySelectorAll('video').forEach(v => v.play().catch(() => {}));
+        }
+
+        // Play on load and on first user gesture (Safari requires gesture)
+        window.addEventListener('load', playAll);
+        document.addEventListener('touchstart', playAll, { passive: true, once: true });
+        document.addEventListener('pointerdown', playAll, { once: true });
+
+        // Re-play when tab regains focus (e.g. user switches back)
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) playAll();
+        });
+
+        // Restart videos from the beginning when they scroll into view
+        const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const v = entry.target;
                 if (entry.isIntersecting) {
-                    v.load();
+                    v.currentTime = 0;
                     v.play().catch(() => {});
                 } else {
                     v.pause();
                 }
             });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('video').forEach(v => videoObserver.observe(v));
+        }, { threshold: 0.25 });
+
+        window.addEventListener('load', () => {
+            document.querySelectorAll('video').forEach(v => videoObserver.observe(v));
+        });
 
         // Tab switching
         document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -245,7 +262,10 @@
                 document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
                 document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
                 btn.classList.add('active');
-                document.getElementById('tab-' + tab).classList.remove('hidden');
+                const panel = document.getElementById('tab-' + tab);
+                panel.classList.remove('hidden');
+                const v = panel.querySelector('video');
+                if (v) v.play().catch(() => {});
             });
         });
 
