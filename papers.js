@@ -10,7 +10,7 @@ const PAPERS = [
   {
     selected: true,
     title: 'Imaging Hidden Objects with Consumer LiDAR using Motion-Induced Aperture Sampling',
-    url: 'https://sidsoma.com/publications/consumer-nlos/',
+    url: 'consumer-nlos/index.html',
     authors: '**Siddharth Somasundaram**, Aaron Young, Akshat Dave, Adithya Pediredla, Ramesh Raskar',
     venue: 'Nature 2026 (to appear)',
     awards: null,
@@ -18,7 +18,7 @@ const PAPERS = [
     imgBase:  'assets/projects/consumer-nlos/nlos_track.gif',
     imgHover: 'assets/projects/consumer-nlos/nlos_track.gif',
     links: [
-      { label: 'project page', url: 'https://sidsoma.com/publications/consumer-nlos/' },
+      { label: 'project page', url: 'consumer-nlos/index.html' },
       { label: 'code',         url: 'https://github.com/sidsoma/consumer-nlos' },
     ],
   },
@@ -105,7 +105,7 @@ const PAPERS = [
   {
     selected: false,
     title: 'Role of Transients in Two-Bounce Non-Line-of-Sight Imaging',
-    url: 'https://sidsoma.com/publications/transient-2b-nlos/',
+    url: 'transient-2b-nlos/index.html',
     authors: '**Siddharth Somasundaram**, Akshat Dave, Connor Henley, Ashok Veeraraghavan, Ramesh Raskar',
     venue: 'CVPR 2023',
     awards: null,
@@ -113,7 +113,7 @@ const PAPERS = [
     imgBase:  'assets/projects/transient-2b-nlos/twonlos_before.PNG',
     imgHover: 'assets/projects/transient-2b-nlos/twonlos_before.PNG',
     links: [
-      { label: 'project page', url: 'https://sidsoma.com/publications/transient-2b-nlos/' },
+      { label: 'project page', url: 'transient-2b-nlos/index.html' },
       { label: 'video',        url: 'https://youtu.be/9K_oV_QY-z0' },
       { label: 'code',         url: 'https://github.com/sidsoma/Transient-2B-NLOS' },
       { label: 'paper',        url: 'https://openaccess.thecvf.com/content/CVPR2023/html/Somasundaram_Role_of_Transients_in_Two-Bounce_Non-Line-of-Sight_Imaging_CVPR_2023_paper.html' },
@@ -143,8 +143,9 @@ const PAPERS = [
     venue: 'ICCP 2022',
     awards: null,
     description: 'Review perspective on convergence of computational imaging, end-to-end optimization, and physics-based machine learning for imaging system design.',
-    imgBase:  'assets/projects/physics-ml-survey/e2e_perspective.png',
-    imgHover: 'assets/projects/physics-ml-survey/axes_perspective.png',
+    imgBase:  'assets/projects/physics-ml-survey/main_figure.png',
+    imgHover: 'assets/projects/physics-ml-survey/main_figure.png',
+    imgFit:   'contain',
     links: [
       { label: 'video', url: 'https://www.youtube.com/watch?v=FDQFiAUrPHo&t=4751s&ab_channel=ICCP' },
       { label: 'paper', url: 'https://ieeexplore.ieee.org/abstract/document/9887681' },
@@ -174,11 +175,12 @@ function _paperCardHTML(paper) {
   const links = paper.links
     .map(l => `<a class="paper-link" href="${l.url}">${l.label}</a>`)
     .join('');
+  const fitStyle = paper.imgFit ? ` style="object-fit:${paper.imgFit}"` : '';
   return `
 <article class="paper-card">
   <div class="paper-img-wrap">
-    <img data-src="${paper.imgBase}" alt="${paper.title}" class="img-base">
-    <img data-src="${paper.imgHover}" alt="" class="img-hover">
+    <img data-src="${paper.imgBase}" alt="${paper.title}" class="img-base"${fitStyle}>
+    <img data-src="${paper.imgHover}" alt="" class="img-hover"${fitStyle}>
   </div>
   <div>
     <a class="paper-title" href="${paper.url}">${paper.title}</a>
