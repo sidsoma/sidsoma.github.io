@@ -280,8 +280,11 @@ video {
     display: flex;
     border-bottom: 2px solid #e5e7eb;
     margin-bottom: 32px;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    white-space: nowrap;
 }
+.tab-nav::-webkit-scrollbar { display: none; }
 
 .tab-btn {
     padding: 10px 22px;
