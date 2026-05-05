@@ -90,7 +90,6 @@ img { max-width: 100%; display: block; }
     color: #f8fafc;
     line-height: 1.1;
     letter-spacing: -0.03em;
-    white-space: nowrap;
     margin: 0 0 16px;
 }
 
@@ -411,14 +410,23 @@ video {
     margin-top: 24px;
 }
 
+/* ── Background grid ─────────────────────────────────────── */
+.background-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 700px) {
-    .project-title { font-size: 2.2rem; }
+    .project-title { font-size: 1.8rem; }
     .section-title { font-size: 1.4rem; }
     .paper-info-grid,
     .result-grid,
     .try-it-grid,
-    .applications-grid { grid-template-columns: 1fr; }
+    .applications-grid,
+    .background-grid { grid-template-columns: 1fr; }
     .page-section { padding: 48px 0; }
     .tab-btn { padding: 8px 14px; font-size: 0.85rem; }
+    .hero .wrap { max-width: 100%; }
 }
