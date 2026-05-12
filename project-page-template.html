@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW92LE7MXD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YW92LE7MXD');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO: Paper Title</title>
+    <meta name="description" content="TODO: One-sentence paper description.">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+    <!-- ── HERO ─────────────────────────────────────────────────── -->
+    <header class="hero">
+        <div class="wrap">
+            <p class="hero-venue">TODO: Venue + Year (e.g. CVPR 2025)</p>
+            <h1 class="project-title">TODO: Short Paper Title</h1>
+            <p class="hero-desc">TODO: One or two sentence high-level description of the paper.</p>
+        </div>
+        <a href="#abstract" class="scroll-arrow" aria-label="Scroll down">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"/>
+            </svg>
+        </a>
+    </header>
+
+    <!-- ── TABLE OF CONTENTS ─────────────────────────────────────── -->
+    <!-- Update href labels and section IDs to match your sections -->
+    <nav class="toc-nav">
+        <div class="toc-inner">
+            <ul class="toc-list">
+                <li><a href="#abstract">Abstract</a></li>
+                <li><a href="#method">Method</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#citation">Citation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ── PAPER INFO / ABSTRACT ────────────────────────────────── -->
+    <section id="abstract" class="paper-info">
+        <div class="wrap">
+            <div class="paper-info-grid">
+                <div class="paper-meta">
+                    <h2 class="paper-title-text">TODO: Full Paper Title</h2>
+                    <p class="venue-badge">TODO: Venue &middot; Year</p>
+                    <div class="authors">
+                        <!-- Repeat this pattern for each author -->
+                        <a href="https://sidsoma.com/">Siddharth Somasundaram</a><sup>1</sup>,&thinsp;
+                        <a href="TODO: coauthor-url">TODO: Co-author Name</a><sup>2</sup>
+                    </div>
+                    <p class="affiliations"><sup>1</sup>&thinsp;MIT &emsp; <sup>2</sup>&thinsp;TODO: Institution</p>
+                    <nav class="paper-links">
+                        <a href="TODO: paper-pdf-url">Paper</a>
+                        <a href="TODO: arxiv-url">arXiv</a>
+                        <a href="TODO: github-url">Code</a>
+                        <!-- Add or remove links as needed -->
+                    </nav>
+                </div>
+                <div class="paper-abstract">
+                    <p class="abstract-heading">Abstract</p>
+                    <p class="abstract-text">TODO: Abstract paragraph 1.</p>
+                    <p class="abstract-text">TODO: Abstract paragraph 2.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── METHOD ───────────────────────────────────────────────── -->
+    <section id="method" class="page-section page-section--alt">
+        <div class="wrap">
+            <h2 class="section-title">TODO: Method section title</h2>
+            <p class="section-desc">TODO: One or two sentence description of the method.</p>
+            <!-- Add figures, videos, or diagrams here -->
+        </div>
+    </section>
+
+    <!-- ── RESULTS ──────────────────────────────────────────────── -->
+    <section id="results" class="page-section">
+        <div class="wrap">
+            <h2 class="section-title">TODO: Results section title</h2>
+            <p class="section-desc">TODO: Brief description of what results show.</p>
+            <!-- Example video result:
+            <video playsinline autoplay loop muted style="width:100%;">
+                <source src="images/results/TODO.mp4" type="video/mp4">
+            </video>
+            -->
+        </div>
+    </section>
+
+    <!-- ── CITATION ──────────────────────────────────────────────── -->
+    <section id="citation" class="page-section">
+        <div class="wrap wrap--narrow">
+            <h2 class="section-title">Citation</h2>
+            <pre class="bibtex-block">@inproceedings{somasundaram2025TODO,
+  title   = {TODO: Full Paper Title},
+  author  = {Somasundaram, Siddharth and TODO: Other Authors},
+  booktitle = {TODO: Venue},
+  year    = {TODO: Year}
+}</pre>
+        </div>
+    </section>
+
+    <script>
+        // Play all videos on load and on first user gesture (required by Safari)
+        function playAll() {
+            document.querySelectorAll('video').forEach(v => v.play().catch(() => {}));
+        }
+        window.addEventListener('load', playAll);
+        document.addEventListener('touchstart', playAll, { passive: true, once: true });
+        document.addEventListener('pointerdown', playAll, { once: true });
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) playAll();
+        });
+
+        // Restart videos from the beginning when they scroll into view
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const v = entry.target;
+                if (entry.isIntersecting) {
+                    v.currentTime = 0;
+                    v.play().catch(() => {});
+                } else {
+                    v.pause();
+                }
+            });
+        }, { threshold: 0.25 });
+        window.addEventListener('load', () => {
+            document.querySelectorAll('video').forEach(v => videoObserver.observe(v));
+        });
+
+        // Active TOC link on scroll
+        const tocLinks = document.querySelectorAll('.toc-list a');
+        const setActive = (id) => {
+            tocLinks.forEach(a => {
+                a.classList.toggle('toc-active', a.getAttribute('href') === '#' + id);
+            });
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) setActive(entry.target.id);
+            });
+        }, { rootMargin: '-44px 0px -50% 0px', threshold: 0 });
+        document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+    </script>
+
+</body>
+</html>
