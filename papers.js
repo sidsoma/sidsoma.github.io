@@ -105,7 +105,7 @@ const PAPERS = [
   {
     selected: false,
     title: 'Role of Transients in Two-Bounce Non-Line-of-Sight Imaging',
-    url: 'transient-2b-nlos/index.html',
+    url: 'transient-2b-nlos/',
     authors: '**Siddharth Somasundaram**, Akshat Dave, Connor Henley, Ashok Veeraraghavan, Ramesh Raskar',
     venue: 'CVPR 2023',
     awards: null,
@@ -113,7 +113,7 @@ const PAPERS = [
     imgBase:  'assets/projects/transient-2b-nlos/twonlos_before.PNG',
     imgHover: 'assets/projects/transient-2b-nlos/twonlos_before.PNG',
     links: [
-      { label: 'project page', url: 'transient-2b-nlos/index.html' },
+      { label: 'project page', url: 'transient-2b-nlos/' },
       { label: 'video',        url: 'https://youtu.be/9K_oV_QY-z0' },
       { label: 'code',         url: 'https://github.com/sidsoma/Transient-2B-NLOS' },
       { label: 'paper',        url: 'https://openaccess.thecvf.com/content/CVPR2023/html/Somasundaram_Role_of_Transients_in_Two-Bounce_Non-Line-of-Sight_Imaging_CVPR_2023_paper.html' },
