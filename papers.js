@@ -12,7 +12,7 @@ const PAPERS = [
     title: 'Imaging Hidden Objects with Consumer LiDAR using Motion-Induced Aperture Sampling',
     url: 'consumer-nlos/',
     authors: '**Siddharth Somasundaram**, Aaron Young, Akshat Dave, Adithya Pediredla, Ramesh Raskar',
-    venue: 'Nature 2026 (to appear)',
+    venue: 'Nature 2026',
     awards: null,
     description: 'Practical non-line-of-sight imaging using off-the-shelf consumer LiDAR hardware.',
     imgBase:  'assets/projects/consumer-nlos/nlos_track.gif',
