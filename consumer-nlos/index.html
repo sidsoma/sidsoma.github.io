@@ -42,7 +42,10 @@
                 <li><a href="#results">Capabilities</a></li>
                 <li><a href="#applications">Applications</a></li>
                 <li><a href="#try-it">Try It Yourself</a></li>
-                <li><a href="#citation">Citation</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#join-us">Join Us</a></li>
+                <li><a href="#acknowledgments">Acknowledgments</a></li>
+                <!-- <li><a href="#citation">Citation</a></li> -->
             </ul>
         </div>
     </nav>
@@ -215,7 +218,82 @@
         </div>
     </section>
 
+    <!-- ── FAQ ──────────────────────────────────────────────────────── -->
+    <section id="faq" class="page-section page-section--alt">
+        <div class="wrap wrap--narrow">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+
+                <details class="faq-item">
+                    <summary class="faq-question">What makes this technology possible?</summary>
+                    <p class="faq-answer">Even when an object is around a corner, tiny amounts of light still scatter off nearby surfaces like walls and floors. We showed that the LiDAR sensors already built into consumer devices can measure those faint reflections and use them to recover information about hidden objects.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">What makes consumer LiDAR special?</summary>
+                    <p class="faq-answer">Modern consumer LiDAR systems are surprisingly sophisticated. They can measure the arrival time of light with extremely high precision &mdash; down to tiny fractions of a nanosecond. That timing information contains much more information about the world than just visible depth mapping, and we&rsquo;re beginning to unlock some of those capabilities computationally.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">Can my phone already do this?</summary>
+                    <p class="faq-answer">Today&rsquo;s phones weren&rsquo;t designed specifically for this application, and there are still significant limitations in range, resolution, and robustness. But what&rsquo;s exciting is that the core sensing hardware already exists in many consumer devices, which means future systems could potentially build on that foundation with little to no modification of the hardware.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">Why does this matter to ordinary people?</summary>
+                    <p class="faq-answer">Technologies like cameras, GPS, and depth sensing all started as specialized research systems before becoming part of everyday life. Around-the-corner sensing could eventually improve safety, accessibility, robotics, wearable computing, and how devices understand the spaces around us. What&rsquo;s exciting is that these capabilities may ultimately emerge on low-cost devices people already use every day.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">How close is this to real-world deployment?</summary>
+                    <p class="faq-answer">We&rsquo;re still early, but what&rsquo;s exciting is that this capability has moved from specialized laboratory equipment to consumer-grade sensors. That&rsquo;s a major step toward real-world deployment, but there are still many important research challenges to solve before this becomes a robust commercial technology.</p>
+                    <p class="faq-answer">For example, current systems still struggle in extremely low-light and high-noise conditions, which are very common in real environments. Handling completely unknown motion &mdash; where both the camera and hidden objects are moving unpredictably &mdash; is another major challenge. There&rsquo;s also a lot of exciting work ahead in combining these measurements with RGB cameras and other sensors, improving reconstruction quality and reliability, and integrating these systems into real-time robotic, automotive, and wearable platforms.</p>
+                    <p class="faq-answer">More broadly, we&rsquo;re still learning how much information can be extracted from indirect light in everyday environments. I think this field is still at a very exciting stage where there are many open problems spanning physics, sensing hardware, computer vision, machine learning, and robotics. We are always looking for collaborators who are excited in working on these topics.</p>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── JOIN US ──────────────────────────────────────────────────── -->
+    <section id="join-us" class="page-section join-us-section">
+        <div class="wrap wrap--narrow">
+            <h2 class="section-title join-us-title">Join Us</h2>
+            <p class="join-us-lead">We have a lot of exciting work in progress — and we&rsquo;re always looking for motivated collaborators to help expand it into new domains.</p>
+            <div class="join-us-cards">
+                <div class="join-us-card">
+                    <span class="join-us-icon">&#127891;</span>
+                    <h3>Researchers &amp; Students</h3>
+                    <p>Working on computational imaging, computer vision, robotics, or sensing? We&rsquo;d love to hear from PhD students, postdocs, and faculty interested in joint projects.</p>
+                </div>
+                <div class="join-us-card">
+                    <span class="join-us-icon">&#128736;</span>
+                    <h3>Industry Partners</h3>
+                    <p>Building products in autonomous vehicles, robotics, AR/VR, or smart devices? We&rsquo;re open to partnerships that translate these capabilities into real-world systems.</p>
+                </div>
+                <div class="join-us-card">
+                    <span class="join-us-icon">&#128161;</span>
+                    <h3>New Application Domains</h3>
+                    <p>Have a domain where around-the-corner sensing could make a difference — healthcare, accessibility, search and rescue? Let&rsquo;s explore it together.</p>
+                </div>
+            </div>
+            <div class="join-us-cta">
+                <p class="join-us-cta-text">Interested? We&rsquo;d love to hear from you.</p>
+                <a href="mailto:somasundaram.siddharth@gmail.com" class="join-us-btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ACKNOWLEDGMENTS ──────────────────────────────────────────── -->
+    <section id="acknowledgments" class="page-section">
+        <div class="wrap wrap--narrow">
+            <h2 class="section-title">Acknowledgments</h2>
+            <p class="abstract-text">Siddharth Somasundaram and Aaron Young gratefully acknowledge funding support from the National Science Foundation (NSF) Graduate Research Fellowship Program (grant no. 2141064). Adithya Pediredla is supported by the NSF (grant no. 2326904).</p>
+        </div>
+    </section>
+
     <!-- ── CITATION ───────────────────────────────────────────────── -->
+    <!--
     <section id="citation" class="page-section">
         <div class="wrap wrap--narrow">
             <h2 class="section-title">Citation</h2>
@@ -230,6 +308,7 @@
 }</pre>
         </div>
     </section>
+    -->
 
     <script>
         function playAll() {
