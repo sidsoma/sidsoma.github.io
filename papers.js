@@ -20,7 +20,8 @@ const PAPERS = [
     links: [
       { label: 'project page', url: 'consumer-nlos/' },
       { label: 'code',         url: 'https://github.com/sidsoma/consumer-nlos' },
-      { label: 'paper',        url: 'https://drive.google.com/file/d/1DYXpndkG-L_ebCmn8vHXut4Yg8SDnE8P/view?usp=sharing' },
+      { label: 'paper',        url: 'https://www.nature.com/articles/s41586-026-10502-x' },
+      { label: 'arXiv',        url: 'https://arxiv.org/abs/2605.17865' },
     ],
   },
   {
