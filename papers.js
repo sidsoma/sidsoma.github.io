@@ -21,7 +21,7 @@ const PAPERS = [
       { label: 'project page', url: 'consumer-nlos/' },
       { label: 'code',         url: 'https://github.com/sidsoma/consumer-nlos' },
       { label: 'paper',        url: 'https://www.nature.com/articles/s41586-026-10502-x' },
-      { label: 'arXiv',        url: 'https://arxiv.org/abs/2605.17865' },
+      // { label: 'arXiv',        url: 'https://arxiv.org/abs/2605.17865' },
     ],
   },
   {
