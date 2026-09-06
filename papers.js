@@ -8,6 +8,22 @@
 
 const PAPERS = [
   {
+    selected: false,
+    title: 'Spatiotemporal Flux Probing for Single-Photon Videography',
+    url: 'https://jerukan.github.io/spt-flux-probing/',
+    authors: 'Jerry Yan*, Matteo Forlivesi*, Bowen Tan, Andrew Xie, **Siddharth Somasundaram**, Sotiris Nousias',
+    venue: 'ECCV 2026',
+    awards: null,
+    description: 'Jointly recovering high-speed motion and high-frequency illumination from sparse photon arrivals.',
+    imgBase:  'assets/projects/spatio-temporal-probing/sptfluxprobe_gamma_select.gif',
+    imgHover: 'assets/projects/spatio-temporal-probing/sptfluxprobe_gamma_select.gif',
+    links: [
+      { label: 'project page', url: 'https://jerukan.github.io/spt-flux-probing/' },
+      { label: 'paper',        url: 'https://jerukan.github.io/spt-flux-probing/paper-pdfs/spt-flux-probing-paper-main.pdf' },
+      { label: 'video',        url: 'https://youtu.be/Bk7LkLDpwV8' },
+    ],
+  },
+  {
     selected: true,
     title: 'Imaging Hidden Objects with Consumer LiDAR via Motion Induced Sampling',
     url: 'consumer-nlos/',
