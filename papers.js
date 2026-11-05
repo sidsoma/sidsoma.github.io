@@ -29,7 +29,7 @@ const PAPERS = [
     url: 'consumer-nlos/',
     authors: '**Siddharth Somasundaram**, Aaron Young, Akshat Dave, Adithya Pediredla, Ramesh Raskar',
     venue: 'Nature 2026',
-    awards: null,
+    awards: [{ type: 'github', label: '450+ GitHub Stars', icon: 'star', url: 'https://github.com/sidsoma/consumer-nlos' }],
     description: 'Practical non-line-of-sight imaging using off-the-shelf consumer LiDAR hardware.',
     imgBase:  'assets/projects/consumer-nlos/nlos_track.gif',
     imgHover: 'assets/projects/consumer-nlos/nlos_track.gif',
@@ -182,10 +182,16 @@ function _formatAuthors(str) {
 function _awardBadges(awards) {
   if (!awards || !awards.length) return '';
   return awards.map(a => {
-    const icon = a.icon === 'trophy'
-      ? `<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M19 5h-2V3H7v2H5C3.9 5 3 5.9 3 7v2c0 2.8 2.1 5.1 4.8 5.5.6 1.3 1.7 2.4 3.2 2.8V20H8v2h8v-2h-3v-2.7c1.5-.4 2.6-1.5 3.2-2.8C18.9 14.1 21 11.8 21 9V7c0-1.1-.9-2-2-2zM5 9V7h2v4.3C5.8 10.8 5 9.8 5 9zm14 0c0 .8-.8 1.8-2 2.3V7h2v2z"/></svg>`
-      : '';
-    return `<span class="award-badge">${icon}${a.label}</span>`;
+    let icon = '';
+    if (a.icon === 'trophy') {
+      icon = `<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M19 5h-2V3H7v2H5C3.9 5 3 5.9 3 7v2c0 2.8 2.1 5.1 4.8 5.5.6 1.3 1.7 2.4 3.2 2.8V20H8v2h8v-2h-3v-2.7c1.5-.4 2.6-1.5 3.2-2.8C18.9 14.1 21 11.8 21 9V7c0-1.1-.9-2-2-2zM5 9V7h2v4.3C5.8 10.8 5 9.8 5 9zm14 0c0 .8-.8 1.8-2 2.3V7h2v2z"/></svg>`;
+    } else if (a.icon === 'star') {
+      icon = `<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`;
+    }
+    const cls = `award-badge${a.type ? ' ' + a.type : ''}`;
+    return a.url
+      ? `<a class="${cls}" href="${a.url}" target="_blank" rel="noopener">${icon}${a.label}</a>`
+      : `<span class="${cls}">${icon}${a.label}</span>`;
   }).join('');
 }
 
